@@ -1,0 +1,9 @@
+Grading at Wed Jun 10 13:12:11 UTC 2020
+Checking code2.c for legal syntax
+temp.c: In function ‘printTriangle’:
+temp.c:6:21: error: expected ‘;’ before ‘:’ token
+   for(int i=0;i<size:i++)
+                     ^
+The code did not have legal syntax!
+
+Overall Grade: F

@@ -45,15 +45,32 @@ rectangle canonicalize(rectangle r) {
 }
 rectangle intersection(rectangle r1, rectangle r2) {
   rectangle temp;
-  temp.x=max(r1.x,r2.x);
-  temp.y=max(r1.y,r2.y);
-  if(temp.y==r1.y)
+  if(r1.width>r2.width)
     {
-      temp.width=r1.width-temp.x;
+      if(r2.x<r1.x+r1.width&&r2.x+r2.width<r1.x+r1.width&&r2.y>r1.y&&r2.y+r2.height<r1.height+r1.x)
+	{
+	  temp.height=0,temp.width=0;
+	  return temp;
+	}
     }
   else
     {
-      temp.width=r2.width-temp.x;
+      if(r1.x<r2.x+r2.width&&r1.x+r1.width<r2.x+r2.width&&r1.y>r2.y&&r1.y+r1.height<r2.height+r2.x)
+	{
+	  temp.height=0,temp.width=0;
+	  return temp;
+	}
+
+    }
+  temp.x=max(r1.x,r2.x);
+  temp.y=max(r1.y,r2.y);
+  if(r1.x+r1.width<r2.x+r2.width)
+    {
+      temp.width=r1.width+r1.x-temp.x;
+    }
+  else
+    {
+      temp.width=r2.width+r2.x-temp.x;
     }
   if(r1.y+r1.height>r2.y+r2.height)
     {

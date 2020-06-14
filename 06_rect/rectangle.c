@@ -44,7 +44,25 @@ rectangle canonicalize(rectangle r) {
   return r;
 }
 rectangle intersection(rectangle r1, rectangle r2) {
-  
+  rectangle temp;
+  temp.x=max(r1.x,r2.x);
+  temp.y=max(r1.y,r2.y);
+  if(temp.y==r1.y)
+    {
+      temp.width=r1.width-temp.x;
+    }
+  else
+    {
+      temp.width=r2.width-temp.x;
+    }
+  if(r1.y+r1.height>r2.y+r2.height)
+    {
+      temp.height=r2.y+r2.height-temp.y;
+    }
+  else
+    {
+      temp.height=r1.y+r1.height-temp.y;
+    }
   return r1;
 }
 

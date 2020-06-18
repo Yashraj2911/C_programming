@@ -1,45 +1,13 @@
-Grading at Sun Jun 14 15:25:54 UTC 2020
+Grading at Thu Jun 18 13:12:36 UTC 2020
 Attempting to compile rectangle.c
-Tring to run rectangle
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_8_did_not_match
-Line_9_did_not_match
-Line_10_did_not_match
-Line_11_did_not_match
-Line_12_did_not_match
-Line_13_did_not_match
-Line_14_did_not_match
-Line_15_did_not_match
-Line_16_did_not_match
-Line_17_did_not_match
-Line_18_did_not_match
-Line_19_did_not_match
-Line_20_did_not_match
-Your file did not match the expected ouput
-Your output did not match what we expected. Here is what you printed
-r1 is (2,3) to (7,9)
-r2 is (9,12) to (14,19)
-r3 is (-2,17) to (5,27)
-r4 is (4,7) to (8,9)
-intersection(r1,r1): (2,3) to (7,9)
-intersection(r1,r2): (2,3) to (7,9)
-intersection(r1,r3): (2,3) to (7,9)
-intersection(r1,r4): (2,3) to (7,9)
-intersection(r2,r1): (9,12) to (14,19)
-intersection(r2,r2): (9,12) to (14,19)
-intersection(r2,r3): (9,12) to (14,19)
-intersection(r2,r4): (9,12) to (14,19)
-intersection(r3,r1): (-2,17) to (5,27)
-intersection(r3,r2): (-2,17) to (5,27)
-intersection(r3,r3): (-2,17) to (5,27)
-intersection(r3,r4): (-2,17) to (5,27)
-intersection(r4,r1): (4,7) to (8,9)
-intersection(r4,r2): (4,7) to (8,9)
-intersection(r4,r3): (4,7) to (8,9)
-intersection(r4,r4): (4,7) to (8,9)
+rectangle.c: In function ‘intersection’:
+rectangle.c:50:18: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+      if(r2.x<r1.x&&r2.x+r2.width<r1.x||r2.y>r1.y+r1.height&&r2.y+r2.height>r1.height+r1.x)
+                  ^
+rectangle.c:55:18: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+      if(r1.x<r2.x&&r1.x+r1.width<r2.x||r1.y>r2.y+r2.height&&r1.y+r1.height>r2.height+r2.x)
+                  ^
+cc1: all warnings being treated as errors
+The code did not compile!
 
 Overall Grade: F

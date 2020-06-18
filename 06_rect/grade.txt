@@ -1,13 +1,13 @@
-Grading at Thu Jun 18 13:12:36 UTC 2020
+Grading at Thu Jun 18 13:19:47 UTC 2020
 Attempting to compile rectangle.c
-rectangle.c: In function ‘intersection’:
-rectangle.c:50:18: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
-      if(r2.x<r1.x&&r2.x+r2.width<r1.x||r2.y>r1.y+r1.height&&r2.y+r2.height>r1.height+r1.x)
-                  ^
-rectangle.c:55:18: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
-      if(r1.x<r2.x&&r1.x+r1.width<r2.x||r1.y>r2.y+r2.height&&r1.y+r1.height>r2.height+r2.x)
-                  ^
-cc1: all warnings being treated as errors
-The code did not compile!
+Tring to run rectangle
+Your file matched the expected output
+removing your main() and replacing it with out own to run more tests...
+#################################################
+testcase1:
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
 
-Overall Grade: F
+Overall Grade: A

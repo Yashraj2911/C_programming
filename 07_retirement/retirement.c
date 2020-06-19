@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 struct _retire_info
 {
   int months;

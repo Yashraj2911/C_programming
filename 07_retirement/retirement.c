@@ -45,4 +45,5 @@ int main()
   Retired.rate_of_return=1;
 
   retirement(327,21345,Working,Retired);
+  return EXIT_SUCCESS;
 }

@@ -1,35 +1,24 @@
-Grading at Fri Jun 19 12:16:51 UTC 2020
+Grading at Fri Jun 19 12:18:24 UTC 2020
 Attempting to compile retirement.c
 Checking for struct _retire_info
-Found on line 2, column 1 
+Found on line 3, column 1 
 Checking for field int months
-Found on line 4, column 3 
-Checking for field double contribution
 Found on line 5, column 3 
-Checking for field double rate_of_return
+Checking for field double contribution
 Found on line 6, column 3 
+Checking for field double rate_of_return
+Found on line 7, column 3 
 Checking for typedef of struct _retire_info to retire_info
-Found on line 8, column 1 
+Found on line 9, column 1 
 Checking for void retirement (int startAge, double initial,  retire_info working,  retire_info retired)
-Found on line 30, column 1 
+Found on line 31, column 1 
 Checking for int main(void)
-Found on line 34, column 1 
+Found on line 35, column 1 
 Trying to run retirement calculator..
 Your file matched the expected output
 Removing your main() and replacing it with our own to run more tests...
-temp2.c: In function ‘main’:
-temp2.c:50:17: error: implicit declaration of function ‘atoi’ [-Werror=implicit-function-declaration]
-   int startAge= atoi(argv[1]);
-                 ^
-temp2.c:51:20: error: implicit declaration of function ‘atof’ [-Werror=implicit-function-declaration]
-   double initial = atof(argv[2]);
-                    ^
-temp2.c:67:10: error: ‘EXIT_SUCCESS’ undeclared (first use in this function)
-   return EXIT_SUCCESS;
-          ^
-temp2.c:67:10: note: each undeclared identifier is reported only once for each function it appears in
 temp2.c: In function ‘_old_removed_main_’:
-temp2.c:47:1: error: control reaches end of non-void function [-Werror=return-type]
+temp2.c:48:1: error: control reaches end of non-void function [-Werror=return-type]
  }
  ^
 cc1: all warnings being treated as errors

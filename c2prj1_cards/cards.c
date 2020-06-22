@@ -53,8 +53,17 @@ card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
   if(value_let>=48&&value_let<=57)
     temp.value=value_let-48;
+  else if(value_let=='A'||value_let=='K'||value_let=='Q'||value_let=='J')
+    {
+      switch(value-let)
+	{
+	case 'A':temp.value=VALUE_ACE;break;
+	case 'K':temp.value=VALUE_KING;break;
+	case 'Q':temp.value=VALUE_QUEEN;break
+	case 'J':temp.value=VALUE_JACK;
+	}
     else
-    temp.value=value_let;
+      temp.value=value_let;
   switch(suit_let)
     {
     case 'S':

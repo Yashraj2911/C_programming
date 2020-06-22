@@ -1,26 +1,19 @@
-Grading at Mon Jun 22 15:03:49 UTC 2020
+Grading at Mon Jun 22 15:15:28 UTC 2020
 Compiling cards.c
-Testing card_from_letters
-For card_from_letters('0','c'), I expected 0c but got 0c
-For card_from_letters('0','d'), I expected 0d but got 0d
-For card_from_letters('0','h'), I expected 0h but got 0h
-For card_from_letters('0','s'), I expected 0s but got 0s
-For card_from_letters('A','c'), I expected Ac but got 5c
-For card_from_letters('A','d'), I expected Ad but got 5d
-For card_from_letters('A','h'), I expected Ah but got 5h
-For card_from_letters('A','s'), I expected As but got 5s
-For card_from_letters('J','c'), I expected Jc but got 4c
-For card_from_letters('J','d'), I expected Jd but got 4d
-For card_from_letters('J','h'), I expected Jh but got 4h
-For card_from_letters('J','s'), I expected Js but got 4s
-For card_from_letters('K','c'), I expected Kc but got 5c
-For card_from_letters('K','d'), I expected Kd but got 5d
-For card_from_letters('K','h'), I expected Kh but got 5h
-For card_from_letters('K','s'), I expected Ks but got 5s
-For card_from_letters('Q','c'), I expected Qc but got 1c
-For card_from_letters('Q','d'), I expected Qd but got 1d
-For card_from_letters('Q','h'), I expected Qh but got 1h
-For card_from_letters('Q','s'), I expected Qs but got 1s
-Failed
+cards.c: In function ‘card_from_letters’:
+cards.c:58:14: error: ‘value’ undeclared (first use in this function)
+       switch(value-let)
+              ^
+cards.c:58:14: note: each undeclared identifier is reported only once for each function it appears in
+cards.c:58:20: error: ‘let’ undeclared (first use in this function)
+       switch(value-let)
+                    ^
+cards.c:63:2: error: expected ‘;’ before ‘case’
+  case 'J':temp.value=VALUE_JACK;
+  ^
+cards.c:65:5: error: expected ‘}’ before ‘else’
+     else
+     ^
+Could not compile your card.c!
 
 Overall Grade: FAILED

@@ -51,7 +51,10 @@ void print_card(card_t c) {
 }
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
-  temp.value=value_let-48;
+  if(value_let>=48&&value_let<=57)
+    temp.value=value_let-48;
+  else
+    temp.value=value_let;
   switch(suit_let)
     {
     case 'S':
@@ -63,7 +66,7 @@ card_t card_from_letters(char value_let, char suit_let) {
     case 'C':
     case 'c': temp.suit=CLUBS;
     }
-  //  assert_card_valid(temp);
+    assert_card_valid(temp);
   return temp;
 }
 card_t card_from_num(unsigned c) {

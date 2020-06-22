@@ -33,7 +33,7 @@ char value_letter(card_t c) {
     case VALUE_JACK:return 'J';break;
     case 10: return '0';break;
     }
-  if(value_let>=48&&value_let<=57)
+  if(c.value>=48&&c.value<=57)
     return (char)(c.value-48);
   else
     return (char)c.value;

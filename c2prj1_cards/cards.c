@@ -32,8 +32,11 @@ char value_letter(card_t c) {
     case VALUE_QUEEN:return 'Q';break;
     case VALUE_JACK:return 'J';break;
     case 10: return '0';break;
-    default:{ char ch=c.value-48;return ch;}
     }
+  if(value_let>=48&&value_let<=57)
+    return (char)(c.value-48);
+  else
+    return (char)c.value;
   }
 char suit_letter(card_t c) {
   int ch=c.suit;

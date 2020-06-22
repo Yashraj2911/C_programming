@@ -51,9 +51,9 @@ void print_card(card_t c) {
 }
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
-  /*if(value_let>=48&&value_let<=57)
+  if(value_let>=48&&value_let<=57)
     temp.value=value_let-48;
-    else*/
+    else
     temp.value=value_let;
   switch(suit_let)
     {

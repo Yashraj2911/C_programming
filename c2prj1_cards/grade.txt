@@ -1,16 +1,6 @@
-Grading at Mon Jun 22 15:15:28 UTC 2020
+Grading at Mon Jun 22 15:16:40 UTC 2020
 Compiling cards.c
 cards.c: In function ‘card_from_letters’:
-cards.c:58:14: error: ‘value’ undeclared (first use in this function)
-       switch(value-let)
-              ^
-cards.c:58:14: note: each undeclared identifier is reported only once for each function it appears in
-cards.c:58:20: error: ‘let’ undeclared (first use in this function)
-       switch(value-let)
-                    ^
-cards.c:63:2: error: expected ‘;’ before ‘case’
-  case 'J':temp.value=VALUE_JACK;
-  ^
 cards.c:65:5: error: expected ‘}’ before ‘else’
      else
      ^

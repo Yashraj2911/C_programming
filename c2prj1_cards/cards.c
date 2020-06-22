@@ -32,7 +32,7 @@ char value_letter(card_t c) {
     case VALUE_QUEEN:return 'Q';break;
     case VALUE_JACK:return 'J';break;
     case 10: return '0';break;
-    default:{ char ch=c.value;return ch;}
+    default:{ char ch=c.value-48;return ch;}
     }
   }
 char suit_letter(card_t c) {

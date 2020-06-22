@@ -1,10 +1,9 @@
-Grading at Mon Jun 22 15:17:46 UTC 2020
+Grading at Mon Jun 22 17:27:53 UTC 2020
 Compiling cards.c
-Testing card_from_letters
-For card_from_letters('0','c'), I expected 0c but got 0c
-For card_from_letters('0','d'), I expected 0d but got 0d
-For card_from_letters('0','h'), I expected 0h but got 0h
-For card_from_letters('0','s'), I expected 0s but got 0s
-Failed
+cards.c: In function ‘card_from_letters’:
+cards.c:56:3: error: ‘else’ without a previous ‘if’
+   else if(value_let=='A'||value_let=='K'||value_let=='Q'||value_let=='J')
+   ^
+Could not compile your card.c!
 
 Overall Grade: FAILED

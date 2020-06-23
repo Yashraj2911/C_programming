@@ -67,7 +67,7 @@ card_t card_from_letters(char value_let, char suit_let) {
 	}
     }
     else
-      temp.value=value_let;
+      temp.value=value_let-48;
   switch(suit_let)
     {
     case 'S':

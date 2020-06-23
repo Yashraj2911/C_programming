@@ -91,19 +91,19 @@ card_t card_from_num(unsigned c) {
       temp.value=c+1;
       temp.suit=HEARTS;
     }
-  else if(c<27)
+  else if(c<26)
     {
-      temp.value=c%13;
+      temp.value=(c+1)%13;
       temp.suit=SPADES;
     }
-  else if(c<40)
+  else if(c<39)
     {
-      temp.value=c%13;
+      temp.value=(c+1)%13;
       temp.suit=CLUBS;
     }
   else
     {
-      temp.value=c%13;
+      temp.value=(c+1)%13;
       temp.suit=DIAMONDS;
     }
   //assert_card_valid(temp);

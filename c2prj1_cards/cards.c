@@ -56,7 +56,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
   //if(value_let>=48&&value_let<=57)
   //temp.value=value_let-48;
-  if(value_let=='10')
+  if(value_let=='0')
     temp.value=0;
   else if(value_let=='A'||value_let=='K'||value_let=='Q'||value_let=='J')
     {
@@ -68,8 +68,8 @@ card_t card_from_letters(char value_let, char suit_let) {
 	case 'J':temp.value=VALUE_JACK;
 	}
     }
-    else
-      temp.value=value_let-48;
+  // else
+  //  temp.value=value_let-48;
   switch(suit_let)
     {
     case 'S':
@@ -106,6 +106,6 @@ card_t card_from_num(unsigned c) {
       temp.value=c%13;
       temp.suit=DIAMONDS;
     }
-  assert_card_valid(temp);
+  //assert_card_valid(temp);
   return temp;
 }

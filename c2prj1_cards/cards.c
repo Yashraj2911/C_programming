@@ -88,22 +88,22 @@ card_t card_from_num(unsigned c) {
   card_t temp;
   if(c<14)
     {
-      temp.value=c;
+      temp.value=c+1;
       temp.suit=HEARTS;
     }
   else if(c<27)
     {
-      temp.value=c%13;
+      temp.value=(c+1)%13;
       temp.suit=SPADES;
     }
   else if(c<40)
     {
-      temp.value=c%13;
+      temp.value=(c+1)%13;
       temp.suit=CLUBS;
     }
   else
     {
-      temp.value=c%13;
+      temp.value=(c+1)%13;
       temp.suit=DIAMONDS;
     }
   //assert_card_valid(temp);

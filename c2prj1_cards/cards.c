@@ -33,9 +33,9 @@ char value_letter(card_t c) {
     case VALUE_JACK:return 'J';break;
     case 10: return '0';break;
     }
-  if(c.value>=48&&c.value<=57)
+  /*  if(c.value>=48&&c.value<=57)
     return (char)(c.value-48);
-  else
+    else*/
     return (char)c.value;
   }
 char suit_letter(card_t c) {

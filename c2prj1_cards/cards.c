@@ -93,17 +93,17 @@ card_t card_from_num(unsigned c) {
     }
   else if(c<27)
     {
-      temp.value=(c+1)%13;
+      temp.value=c%13;
       temp.suit=SPADES;
     }
   else if(c<40)
     {
-      temp.value=(c+1)%13;
+      temp.value=c%13;
       temp.suit=CLUBS;
     }
   else
     {
-      temp.value=(c+1)%13;
+      temp.value=c%13;
       temp.suit=DIAMONDS;
     }
   //assert_card_valid(temp);

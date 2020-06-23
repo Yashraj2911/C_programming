@@ -36,7 +36,7 @@ char value_letter(card_t c) {
   /*  if(c.value>=48&&c.value<=57)
     return (char)(c.value-48);
     else*/
-  return (char)(c.value-48);
+  return (char)(c.value+48);
   }
 char suit_letter(card_t c) {
   int ch=c.suit;

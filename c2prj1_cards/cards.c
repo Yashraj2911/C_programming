@@ -57,7 +57,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   //if(value_let>=48&&value_let<=57)
   //temp.value=value_let-48;
   if(value_let=='0')
-    temp.value=48;
+    temp.value=0;
   else if(value_let=='A'||value_let=='K'||value_let=='Q'||value_let=='J')
     {
       switch(value_let)

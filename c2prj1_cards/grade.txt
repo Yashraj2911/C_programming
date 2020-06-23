@@ -1,4 +1,4 @@
-Grading at Tue Jun 23 13:14:12 UTC 2020
+Grading at Tue Jun 23 13:16:13 UTC 2020
 Compiling cards.c
 Testing card_from_letters
 Passed
@@ -23,6 +23,7 @@ Jh
 Qh
 Kh
 Ah
+1s
 2s
 3s
 4s
@@ -35,7 +36,7 @@ Ah
 Js
 Qs
 0s
-1s
+1c
 2c
 3c
 4c
@@ -48,7 +49,7 @@ Qs
 Jc
 Qc
 0c
-1c
+1d
 2d
 3d
 4d
@@ -60,6 +61,5 @@ Qc
 0d
 Jd
 Qd
-0d
 
 Overall Grade: FAILED

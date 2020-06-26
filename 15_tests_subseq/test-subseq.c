@@ -6,7 +6,7 @@ int main()
   if( maxSeq(arr1,6)!=4);
   return EXIT_FAILURE;
   int arr2[]={0,1,-1};
-  if(maxSeq(arr2,3)!=2);
+  if(maxSeq(arr2,3)!=2)
   return EXIT_FAILURE;
   return EXIT_SUCCESS;
   }

@@ -5,11 +5,12 @@ size_t maxSeq(int *array,size_t n)
   if(n==0)
     return 0;
   int count=1;
-  for(i;i<n;i++)
+  for(;i<n;i++)
     {
       if(array[i]>array[i-1])
 	count++;
       else
 	count=1;
     }
+  return count;
 }

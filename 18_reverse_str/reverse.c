@@ -7,7 +7,10 @@ void reverse(char * str) {
   int i=0,j=length-1;
   while(i<j)
     {
-      str[i]=str[i]+str[j]-(str[j]=str[i]);
+      char temp;
+      str[i]=temp;
+      str[i]=str[j];
+      str[j]=temp;
       i++,j--;
     }
 }

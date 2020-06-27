@@ -1,0 +1,10 @@
+Grading at Sat Jun 27 15:43:44 UTC 2020
+Attempting to compile numToBits.c
+numToBits.c: In function ‘numToBits’:
+numToBits.c:47:3: error: statement with no effect [-Werror=unused-value]
+   for(j;j<nNums;j++)
+   ^
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F

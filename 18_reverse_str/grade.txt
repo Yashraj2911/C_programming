@@ -1,0 +1,10 @@
+Grading at Sat Jun 27 13:50:24 UTC 2020
+Attempting to compile  reverse.c
+reverse.c: In function ‘reverse’:
+reverse.c:10:35: error: operation on ‘*(str + (sizetype)j)’ may be undefined [-Werror=sequence-point]
+       str[i]=str[i]+str[j]-(str[j]=str[i]);
+                                   ^
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F

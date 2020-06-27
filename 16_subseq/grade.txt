@@ -1,0 +1,13 @@
+Grading at Sat Jun 27 07:51:00 UTC 2020
+Attempting to compile maxSeq.c 
+maxSeq.c: In function ‘maxSeq’:
+maxSeq.c:8:3: error: statement with no effect [-Werror=unused-value]
+   for(i;i<n;i++)
+   ^
+maxSeq.c:15:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F

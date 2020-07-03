@@ -27,7 +27,7 @@ suit_t flush_suit(deck_t * hand) {
       if(hand->cards[i]->suit<NUM_SUITS)
 	arr[hand->cards[i]->suit]++;
     }
-  for(int i=0;i<hand->n_cards;i++)
+  for(int i=0;i<4;i++)
     if(arr[i]>=5)
       return i;
   return NUM_SUITS;

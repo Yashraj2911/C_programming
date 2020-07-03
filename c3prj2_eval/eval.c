@@ -21,12 +21,10 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
     }
 }
 suit_t flush_suit(deck_t * hand) {
-  int arr[4];
-  for(int i=0;i<3;i++)
-    arr[i]=0;
+  int arr[4]={0};
   for(int i=0;i<hand->n_cards;i++)
     {
-      if(hand->cards[i]->suit!=NUM_SUITS)
+      if(hand->cards[i]->suit<NUM_SUITS)
 	arr[hand->cards[i]->suit]++;
     }
   for(int i=0;i<hand->n_cards;i++)

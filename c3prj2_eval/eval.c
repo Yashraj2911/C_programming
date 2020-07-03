@@ -98,20 +98,32 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   else
     {
       int count=0;
-      for(int i=index;i<hand->n_cards-1;i++)
+      int count_suit[4]={0};
+      for(int i=0;i<hand->n_cards;i++)
+	count_suit[hand->cards[i]->suit]++;
+      size_t suspect=NUM_SUITS;
+      for(int i=0;i<4;i++)
+	if(count_suit[i]>=5)
+	  suspect=i;
+      if(suspect!=NUM_SUITS)
 	{
-	  int diff=hand->cards[i]->value-hand->cards[i+1]->value;
-	  int diff_suit=hand->cards[i]->suit-hand->cards[i+1]->suit;
-	  if(diff>1)
-	    break;
+	  int temp_value=SPADES;
+	  for(int i=index;i<hand->n_cards-1;i++)
+	    {
+	      int diff=temp_value-hand->cards[i+1]->value;
+	      int diff_suit=suspect-hand->cards[i+1]->suit;
+	      if(diff>1)
+		break;
+	      if(count==4)
+		break;
+	      if(diff==1&&!diff_suit)
+		count++;
+	       if(hand->cards[i]->suit==suspect)
+		temp_value=hand->cards[i]->value;
+	    }
 	  if(count==4)
-	    break;
-	  if(diff==1&&!diff_suit)
-	    count++;
+	    return 1;
 	}
-      if(count==4)
-	return 1;
-
       if(hand->cards[index]->value==VALUE_ACE)       //func for ace low straight flush
 	{
 	  count=0;

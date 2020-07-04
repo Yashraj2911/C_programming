@@ -98,10 +98,10 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   else
     {
       int count=0;
-      int count_suit[4]={0};
+      int count_suit[5]={0};
       for(int i=0;i<hand->n_cards;i++)
 	count_suit[hand->cards[i]->suit]++;
-      size_t suspect=NUM_SUITS;
+      suit_t suspect=NUM_SUITS;
       for(int i=0;i<4;i++)
 	if(count_suit[i]>=5)
 	  suspect=i;

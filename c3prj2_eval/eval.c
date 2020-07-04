@@ -141,8 +141,8 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 	      int diff_suit=suspect-hand->cards[i]->suit;
 	      if(diff==1&&!diff_suit&&count)
 		count++;
-	      if(diff>1)
-		break;
+	      //    if(diff>1)
+	      //	break;
 	      if(hand->cards[i]->suit==suspect)
 		temp_value=hand->cards[i]->value;
 	    }

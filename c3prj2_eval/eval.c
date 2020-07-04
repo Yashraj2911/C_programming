@@ -80,8 +80,10 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
       if(hand->cards[index]->value==VALUE_ACE)       //func for ace low straight
 	{
 	  count=0;
-	  for(int i=index;i<hand->n_cards-1;i++)
+	  for(int i=index+1;i<hand->n_cards-1;i++)
 	    {
+	      if(hand->cards[index]->value-hand->cards[index+1]->value>1)
+		break;
 	      if(hand->cards[i]->value==5)
 		count=1;
 	      int diff=hand->cards[i]->value-hand->cards[i+1]->value;

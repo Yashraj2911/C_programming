@@ -4,10 +4,16 @@
 int main(int argc,char* argv[])
 {
   if(argc!=2)
-    return EXIT_FAILURE;
+    {
+      fprintf(stderr,"Too few or many arguments..");
+      return EXIT_FAILURE;
+    }
   FILE* f=fopen(argv[1],"r");
   if(f==NULL)
-    return EXIT_FAILURE;
+    {
+      fprintf(stderr,"\nFile %s does not exist...",argv[1]);
+      return EXIT_FAILURE;
+    }
   int c;
   int arr[26]={0};
   while((c=fgetc(f))!=EOF)
@@ -21,5 +27,6 @@ int main(int argc,char* argv[])
   for(int i=0;i<26;i++)
     if(max<arr[i])
       max=i;
-  return max;
+  printf("%d\n",max);
+  return EXIT_SUCCESS;
 }

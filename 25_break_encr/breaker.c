@@ -15,7 +15,7 @@ int main(int argc,char* argv[])
       return EXIT_FAILURE;
     }
   int c;
-  int arr[26]={0};
+  long arr[26]={0};
   while((c=fgetc(f))!=EOF)
     {
       if(!isalpha(c))
@@ -23,14 +23,11 @@ int main(int argc,char* argv[])
       c=tolower(c);
       arr[c-97]++;
     }
-  int max=0,max_ind=0;
+  long max=0;
   for(int i=0;i<26;i++)
-    if(max<arr[i])
-      {
-	max=arr[i];
-	max_ind=i;
-      }
-  printf("%d\n",max_ind);
+    if(arr[max]<arr[i])
+	max=i;
+  printf("%ld\n",max);
   if(fclose(f) != 0)
     {
       fprintf(stderr,"Failed to close the input file!\n");

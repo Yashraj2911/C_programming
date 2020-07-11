@@ -23,10 +23,13 @@ int main(int argc,char* argv[])
       c=tolower(c);
       arr[c-97]++;
     }
-  int max=0;
+  int max=0,max_ind=0;
   for(int i=0;i<26;i++)
     if(max<arr[i])
-      max=i;
-  printf("%d\n",max);
+      {
+	max=arr[i];
+	max_ind=i;
+      }
+  printf("%d\n",max_ind);
   return EXIT_SUCCESS;
 }

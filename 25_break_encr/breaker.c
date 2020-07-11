@@ -27,6 +27,7 @@ int main(int argc,char* argv[])
   for(int i=0;i<26;i++)
     if(arr[max]<arr[i])
 	max=i;
+  max=(max+22)%26;
   printf("%ld\n",max);
   if(fclose(f) != 0)
     {

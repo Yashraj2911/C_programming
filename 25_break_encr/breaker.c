@@ -31,5 +31,11 @@ int main(int argc,char* argv[])
 	max_ind=i;
       }
   printf("%d\n",max_ind);
+  if(fclose(f) != 0)
+    {
+      fprintf(stderr,"Failed to close the input file!\n");
+      return EXIT_FAILURE;
+    }
+  
   return EXIT_SUCCESS;
 }

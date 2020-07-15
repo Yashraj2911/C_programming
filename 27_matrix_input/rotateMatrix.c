@@ -60,13 +60,13 @@ int main(int argc,char* argv[])
 	  fprintf(stderr,"\nToo many lines");
 	  return EXIT_FAILURE;
 	}
-      matrix[j][i-1]=c;
-      i++;
       if(i>10)
 	{
 	  fprintf(stderr,"\nToo long line");
 	  return EXIT_FAILURE;
 	}
+       matrix[j][i-1]=c;
+      i++;
     }
   if(j==9||j==10)
     {

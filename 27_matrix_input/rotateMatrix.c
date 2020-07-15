@@ -68,7 +68,7 @@ int main(int argc,char* argv[])
        matrix[j][i-1]=c;
       i++;
     }
-  if(j==9||j==10)
+  if(j==10)
     {
       rotate(matrix);
       printMatrix(matrix);

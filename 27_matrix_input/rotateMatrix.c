@@ -55,8 +55,18 @@ int main(int argc,char* argv[])
 	  fprintf(stderr,"\nInvalid input..");
 	  return EXIT_FAILURE;
 	}
+      if(j>9)
+	{
+	  fprintf(stderr,"\nToo many lines");
+	  return EXIT_FAILURE;
+	}
       matrix[j][i-1]=c;
       i++;
+      if(i>11)
+	{
+	  fprintf(stderr,"\nToo long line");
+	  return EXIT_FAILURE;
+	}
     }
   rotate(matrix);
   printMatrix(matrix);

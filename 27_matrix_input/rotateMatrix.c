@@ -60,23 +60,22 @@ int main(int argc,char* argv[])
 	  fprintf(stderr,"\nToo many lines");
 	  return EXIT_FAILURE;
 	}
-      if(j<10)
       matrix[j][i-1]=c;
       i++;
-      if(i>11)
+      if(i>10)
 	{
 	  fprintf(stderr,"\nToo long line");
 	  return EXIT_FAILURE;
 	}
     }
-  if(j==9)
+  if(j==9||j==10)
     {
       rotate(matrix);
       printMatrix(matrix);
     }
   else
     {
-      fprintf(stderr,"\nFile empty or too short or too long");
+      fprintf(stderr,"\nFile empty or too short");
       return EXIT_FAILURE;
     }
   if(!fclose(f))

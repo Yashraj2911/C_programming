@@ -68,7 +68,7 @@ int main(int argc,char* argv[])
 	  return EXIT_FAILURE;
 	}
     }
-  if(j==9)
+  if(j==9||j==10)
     {
       rotate(matrix);
       printMatrix(matrix);

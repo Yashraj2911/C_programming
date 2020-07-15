@@ -68,8 +68,16 @@ int main(int argc,char* argv[])
 	  return EXIT_FAILURE;
 	}
     }
-  rotate(matrix);
-  printMatrix(matrix);
+  if(j==9)
+    {
+      rotate(matrix);
+      printMatrix(matrix);
+    }
+  else
+    {
+      fprintf(stderr,"\nFile empty or too short");
+      return EXIT_FAILURE;
+    }
   if(!fclose(f))
     return EXIT_SUCCESS;
   else

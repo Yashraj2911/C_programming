@@ -20,10 +20,8 @@ void printData(char **arr)
   int i=0;
       while(arr[i])
 	{
-	  printf("%s\n",arr[i]);
-	  free(arr[i++]);
+	  printf("%s\n",arr[i++]);
 	}
-      free(arr);
 }
 void read(FILE* stream)
 {
@@ -37,8 +35,12 @@ void read(FILE* stream)
 	  arr[i++]=line;
 	  line=NULL;
 	}
-      sortData(arr,i+1);
+      free(line);
+      sortData(arr,i);
       printData(arr);
+      for(int j=0;j<i;j++)
+	free(arr[j]);
+      free(arr);
 }
 int main(int argc, char ** argv) {
   
@@ -46,7 +48,7 @@ int main(int argc, char ** argv) {
     {
       read(stdin);
     }
-  else
+  else if(argc==2)
     {
       FILE* f=fopen(argv[1],"r");
       if(!f)
@@ -55,6 +57,16 @@ int main(int argc, char ** argv) {
 	  return EXIT_FAILURE;
 	}
       read(f);
+      if(fclose(f))
+	{
+	  fprintf(stderr,"\nError in closing the file");
+	  return EXIT_FAILURE;
+	}
+    }
+  else
+    {
+      fprintf(stderr,"\nToo many arguments");
+      return EXIT_FAILURE;
     }
   return EXIT_SUCCESS;
 }

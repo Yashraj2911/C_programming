@@ -26,7 +26,7 @@ void printData(char **arr)
 void read(FILE* stream)
 {
   char* line=NULL;
-      char** arr;
+      char** arr=NULL;
       size_t size=0;
       size_t len,i=0;
       while((len=getline(&line,&size,stream))>=0)

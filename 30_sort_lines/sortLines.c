@@ -48,25 +48,23 @@ int main(int argc, char ** argv) {
     {
       read(stdin);
     }
-  else if(argc==2)
-    {
-      FILE* f=fopen(argv[1],"r");
-      if(!f)
-	{
-	  fprintf(stderr,"\nFile does not exist..");
-	  return EXIT_FAILURE;
-	}
-      read(f);
-      if(fclose(f))
-	{
-	  fprintf(stderr,"\nError in closing the file");
-	  return EXIT_FAILURE;
-	}
-    }
   else
     {
-      fprintf(stderr,"\nToo many arguments");
-      return EXIT_FAILURE;
+      for(int i=1;i<argc;i++)
+	{
+	  FILE* f=fopen(argv[i],"r");
+	  if(!f)
+	    {
+	      fprintf(stderr,"\nFile does not exist..");
+	      return EXIT_FAILURE;
+	    }
+	  read(f);
+	  if(fclose(f))
+	    {
+	      fprintf(stderr,"\nError in closing the file");
+	      return EXIT_FAILURE;
+	    }
+	}
     }
   return EXIT_SUCCESS;
 }

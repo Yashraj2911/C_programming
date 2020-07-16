@@ -23,10 +23,10 @@ void printData(char **arr)
 	  printf("%s",arr[i++]);
 	}
 }
-void read(FILE* stream)
+void read(FILE* stream,int flag)
 {
       char* line=NULL;
-       if(stream!=stdin)
+       if(flag==1)
 	{
 	   char** arr=NULL;
 	   size_t size=0;
@@ -55,7 +55,7 @@ int main(int argc, char ** argv) {
   
   if(argc==1)
     {
-      read(stdin);
+      read(stdin,0);
     }
   else
     {
@@ -67,7 +67,7 @@ int main(int argc, char ** argv) {
 	      fprintf(stderr,"\nFile does not exist..");
 	      return EXIT_FAILURE;
 	    }
-	  read(f);
+	  read(f,1);
 	  if(fclose(f))
 	    {
 	      fprintf(stderr,"\nError in closing the file");

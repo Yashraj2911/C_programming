@@ -20,7 +20,8 @@ void printData(char **arr)
   int i=0;
       while(arr[i])
 	{
-	  printf("%s",arr[i++]);
+	  printf("%s",arr[i]);
+	  i++;
 	}
 }
 void read(FILE* stream,int flag)
@@ -34,8 +35,10 @@ void read(FILE* stream,int flag)
      	  while((len=getline(&line,&size,stream))>=0)
 	    {
 	      arr=realloc(arr,(i+1)*sizeof(*arr));
-	      arr[i++]=line;
+	      arr[i]=line;
 	      line=NULL;
+	      size=0;
+	      i++;
 	    }
 	  free(line);
 	  sortData(arr,i);

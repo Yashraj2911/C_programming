@@ -24,17 +24,18 @@ void printData(char **arr)
 	  i++;
 	}
 }
-void read(FILE* stream,int flag)
+void read(FILE* stream)
 {
-      char* line=NULL;
-       if(flag==1)
-	{
-	   char** arr=NULL;
+  //      if(stream!=stdin)
+  //	{
+	  char* line=NULL;
+	  char** arr=NULL;
 	   size_t size=0;
-           size_t len,i=0;
-     	  while((len=getline(&line,&size,stream))>=0)
+           int len,i=0;
+     	  while((len=getline(&line,&size,*stream))>=0)
 	    {
 	      arr=realloc(arr,(i+1)*sizeof(*arr));
+	      arr[i]=malloc(len*sizeof(**arr));
 	      arr[i]=line;
 	      line=NULL;
 	      size=0;
@@ -46,19 +47,19 @@ void read(FILE* stream,int flag)
 	  for(int j=0;j<i;j++)
 	    free(arr[j]);
 	  free(arr);
-	}
-      else
+	  //	}
+	  /*  else
 	{
 	  char s[1000];
 	  scanf("%[^\t]",s);
 	  printf("%s",s);
-	}
+	  }*/
 }
 int main(int argc, char ** argv) {
   
   if(argc==1)
     {
-      read(stdin,0);
+      read(&stdin,0);
     }
   else
     {
@@ -70,7 +71,7 @@ int main(int argc, char ** argv) {
 	      fprintf(stderr,"\nFile does not exist..");
 	      return EXIT_FAILURE;
 	    }
-	  read(f,1);
+	  read(&f,1);
 	  if(fclose(f))
 	    {
 	      fprintf(stderr,"\nError in closing the file");

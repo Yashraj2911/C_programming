@@ -18,66 +18,66 @@ void sortData(char ** data, size_t count) {
 void printData(char **arr)
 {
   int i=0;
-      while(arr[i])
+  while(arr[i])
+    {
+      printf("%s",arr[i]);
+      i++;
+    }
+}
+void read(int argc,char** argv)
+{
+  for(int i=1;i<argc;i++)
+    {
+      FILE* f=fopen(argv[i],"r");
+      if(!f)
 	{
-	  printf("%s",arr[i]);
+	  fprintf(stderr,"\nFile does not exist..");
+	  exit(EXIT_FAILURE);
+	}
+      char* line=NULL;
+      char** arr=NULL;
+      size_t size=0;
+      int len,i=0;
+      while((len=getline(&line,&size,f))>=0)
+	{
+	  arr=(char**)realloc(arr,(i+2)*sizeof(*arr));
+	  arr[i]=malloc(len*sizeof(**arr));
+	  arr[i]=line;
+	  line=NULL;
+	  free(line);
+	  size=0;
 	  i++;
 	}
-}
-void read(FILE* stream)
-{
-        if(stream!=stdin)
-  	{
-	  char* line=NULL;
-	  char** arr=NULL;
-	   size_t size=0;
-           int len,i=0;
-     	  while((len=getline(&line,&size,stream))>=0)
-	    {
-	      arr=realloc(arr,(i+2)*sizeof(*arr));
-	      arr[i]=line;
-	      line=NULL;
-	      size=0;
-	      i++;
-	    }
-	  arr[i+1]=NULL;
-	  free(line);
-	  sortData(arr,i);
-	  printData(arr);
-	  for(int j=0;j<i;j++)
-	    free(arr[j]);
-	  free(arr);
-	 	}
-	 else
+      free(line);
+      arr[i]=NULL;
+      //line=NULL;
+      sortData(arr,i);
+      printData(arr);
+      for(int j=0;j<i;j++)
+	free(arr[j]);
+      free(arr);
+      if(fclose(f))
 	{
-	  char s[1000];
-	  scanf("%[^\t]",s);
-	  printf("%s",s);
-	  }
+	  fprintf(stderr,"\nError in closing the file");
+	  exit(EXIT_FAILURE);
+	}
+    }
 }
-int main(int argc, char ** argv) {
-  
+void foo()
+{
+  char s[1000];
+    scanf("%[^\t]",s);
+      printf("%s",s);
+}
+int main(int argc, char * argv[]) {
+
   if(argc==1)
     {
-      read(stdin);
+       foo();
     }
   else
     {
-      for(int i=1;i<argc;i++)
-	{
-	  FILE* f=fopen(argv[i],"r");
-	  if(!f)
-	    {
-	      fprintf(stderr,"\nFile does not exist..");
-	      return EXIT_FAILURE;
-	    }
-	  read(f);
-	  if(fclose(f))
-	    {
-	      fprintf(stderr,"\nError in closing the file");
-	      return EXIT_FAILURE;
-	    }
-	}
+      read(argc,argv);
     }
   return EXIT_SUCCESS;
 }

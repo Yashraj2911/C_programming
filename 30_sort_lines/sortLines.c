@@ -26,34 +26,34 @@ void printData(char **arr)
 }
 void read(FILE* stream)
 {
-  //      if(stream!=stdin)
-  //	{
+        if(stream!=stdin)
+  	{
 	  char* line=NULL;
 	  char** arr=NULL;
 	   size_t size=0;
            int len,i=0;
      	  while((len=getline(&line,&size,stream))>=0)
 	    {
-	      arr=realloc(arr,(i+1)*sizeof(*arr));
-	      arr[i]=malloc(len*sizeof(**arr));
+	      arr=realloc(arr,(i+2)*sizeof(*arr));
 	      arr[i]=line;
 	      line=NULL;
 	      size=0;
 	      i++;
 	    }
+	  arr[i+1]=NULL;
 	  free(line);
 	  sortData(arr,i);
 	  printData(arr);
 	  for(int j=0;j<i;j++)
 	    free(arr[j]);
 	  free(arr);
-	  //	}
-	  /*  else
+	 	}
+	 else
 	{
 	  char s[1000];
 	  scanf("%[^\t]",s);
 	  printf("%s",s);
-	  }*/
+	  }
 }
 int main(int argc, char ** argv) {
   

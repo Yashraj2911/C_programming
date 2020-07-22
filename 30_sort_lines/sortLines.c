@@ -32,7 +32,7 @@ void read(FILE* stream)
 	  char** arr=NULL;
 	   size_t size=0;
            int len,i=0;
-     	  while((len=getline(&line,&size,*stream))>=0)
+     	  while((len=getline(&line,&size,stream))>=0)
 	    {
 	      arr=realloc(arr,(i+1)*sizeof(*arr));
 	      arr[i]=malloc(len*sizeof(**arr));
@@ -59,7 +59,7 @@ int main(int argc, char ** argv) {
   
   if(argc==1)
     {
-      read(&stdin,0);
+      read(stdin);
     }
   else
     {
@@ -71,7 +71,7 @@ int main(int argc, char ** argv) {
 	      fprintf(stderr,"\nFile does not exist..");
 	      return EXIT_FAILURE;
 	    }
-	  read(&f,1);
+	  read(f);
 	  if(fclose(f))
 	    {
 	      fprintf(stderr,"\nError in closing the file");

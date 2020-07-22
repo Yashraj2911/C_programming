@@ -1,39 +1,16 @@
-Grading at Wed Jul 22 06:44:01 UTC 2020
+Grading at Wed Jul 22 06:53:04 UTC 2020
 Attempting to compile sortLines.c
-sortLines.c: In function ‘read’:
-sortLines.c:35:40: error: incompatible type for argument 3 of ‘getline’
-         while((len=getline(&line,&size,*stream))>=0)
-                                        ^
-In file included from sortLines.c:1:0:
-/usr/include/stdio.h:678:20: note: expected ‘FILE * restrict {aka struct _IO_FILE * restrict}’ but argument is of type ‘FILE {aka struct _IO_FILE}’
- extern _IO_ssize_t getline (char **__restrict __lineptr,
-                    ^
-sortLines.c: In function ‘main’:
-sortLines.c:62:12: error: passing argument 1 of ‘read’ from incompatible pointer type [-Werror=incompatible-pointer-types]
-       read(&stdin,0);
-            ^
-sortLines.c:27:6: note: expected ‘FILE * {aka struct _IO_FILE *}’ but argument is of type ‘struct _IO_FILE **’
- void read(FILE* stream)
-      ^
-sortLines.c:62:7: error: too many arguments to function ‘read’
-       read(&stdin,0);
-       ^
-sortLines.c:27:6: note: declared here
- void read(FILE* stream)
-      ^
-sortLines.c:74:9: error: passing argument 1 of ‘read’ from incompatible pointer type [-Werror=incompatible-pointer-types]
-    read(&f,1);
-         ^
-sortLines.c:27:6: note: expected ‘FILE * {aka struct _IO_FILE *}’ but argument is of type ‘FILE ** {aka struct _IO_FILE **}’
- void read(FILE* stream)
-      ^
-sortLines.c:74:4: error: too many arguments to function ‘read’
-    read(&f,1);
-    ^
-sortLines.c:27:6: note: declared here
- void read(FILE* stream)
-      ^
-cc1: all warnings being treated as errors
-The code did not compile!
+#################################################
+testcase1:
+valgrind reported memory errors
+#################################################
+testcase2:
+Your output is incorrect
+#################################################
+testcase3:
+valgrind reported memory errors
+#################################################
+testcase4:
+valgrind reported memory errors
 
 Overall Grade: F

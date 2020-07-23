@@ -159,6 +159,7 @@ void freeBoard(board_t * b) {
   for(int i=0;i<b->height;i++)
     free(b->board[i]);
   free(b->board);
+  free(b);
 }
 
 int readInt(char ** linep, size_t * lineszp) {

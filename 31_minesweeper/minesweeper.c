@@ -115,7 +115,7 @@ int countMines(board_t * b, int x, int y) {
       if((temp_x>=0&&temp_x<b->height)&&(temp_y>=0&&temp_y<b->width))
 	{
 	  if(!(temp_x==x&&temp_y==y))
-	  if(IS_MINE(b->board[temp_x][temp_y]))
+	  if(IS_MINE(b->board[temp_y][temp_x]))
 	    count++;
 	}
       temp_y++;

@@ -41,7 +41,7 @@ void read(int argc,char** argv)
       while((len=getline(&line,&size,f))>=0)
 	{
 	  arr=(char**)realloc(arr,(i+2)*sizeof(*arr));
-	  arr[i]=malloc(len*sizeof(**arr));
+	  //arr[i]=malloc(len*sizeof(**arr));
 	  arr[i]=line;
 	  line=NULL;
 	  free(line);
@@ -53,7 +53,7 @@ void read(int argc,char** argv)
       //line=NULL;
       sortData(arr,i);
       printData(arr);
-      for(int j=0;j<i;j++)
+      for(int j=0;j<=i;j++)
 	free(arr[j]);
       free(arr);
       if(fclose(f))

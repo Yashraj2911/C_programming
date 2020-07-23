@@ -110,7 +110,7 @@ void printBoard(board_t * b) {
 int countMines(board_t * b, int x, int y) {
   int count=0,flag=0,ind=-1;
   int temp_x=x+ind,temp_y=y-1;
-  for(int i=0;i<8;i++)
+  for(int i=0;i<9;i++)
     {
       if((temp_x>=0&&temp_x<b->height)&&(temp_y>=0&&temp_y<b->width))
 	{

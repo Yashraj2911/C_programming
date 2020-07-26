@@ -26,7 +26,7 @@ kvarray_t * readKVs(const char * fname) {
 	  size=0;
 	  continue;
 	}
-      int j=0;
+      int j=1;
       while(j<len&&line[j]!='=')
 	j++;
       if(j==len||!j)

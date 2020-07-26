@@ -1,17 +1,10 @@
-Grading at Sun Jul 26 11:32:01 UTC 2020
+Grading at Sun Jul 26 11:45:51 UTC 2020
 Attempting to compile:
-#################################################
-testcase1:
-Your output is correct
-  - Valgrind was clean (no errors, no memory leaks)
-valgrind was clean
-#################################################
-testcase2:
-Your output is correct
-  - Valgrind was clean (no errors, no memory leaks)
-valgrind was clean
-#################################################
-testcase3:
-valgrind reported memory errors
+kv.c: In function ‘readKVs’:
+kv.c:22:14: error: comparison between pointer and integer [-Werror]
+       if(line=='\n')
+              ^
+cc1: all warnings being treated as errors
+The code did not compile!
 
-Overall Grade: C
+Overall Grade: F

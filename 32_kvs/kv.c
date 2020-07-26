@@ -33,10 +33,11 @@ kvarray_t * readKVs(const char * fname) {
 	temp->arr[i]->value[v-j-1]=line[v];
       free(line);
       line=NULL;
+      i++;
     }
   free(line);
   line=NULL;
-  if(!fclose(f))
+  if(fclose(f))
     {
       fprintf(stderr,"\nError in closing the file");
       return NULL;

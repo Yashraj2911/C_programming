@@ -23,6 +23,7 @@ kvarray_t * readKVs(const char * fname) {
 	{
 	  free(line);
 	  line=NULL;
+	  size=0;
 	  continue;
 	}
       int j=0;
@@ -48,6 +49,7 @@ kvarray_t * readKVs(const char * fname) {
       temp->arr[i]->value[t]=0;
       free(line);
       line=NULL;
+      size=0;
       i++;
     }
   free(line);

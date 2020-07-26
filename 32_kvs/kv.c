@@ -28,7 +28,7 @@ kvarray_t * readKVs(const char * fname) {
       temp->arr=realloc(temp->arr,(i+1)*sizeof(kvpair_t*));
       temp->len=i+1;
       int j=0;
-      while(line[j]&&line[j]!='=')
+      while(j<len&&line[j]!='=')
 	j++;
       temp->arr[i]=malloc(sizeof(kvpair_t));
       temp->arr[i]->key=malloc(j*sizeof(char*));

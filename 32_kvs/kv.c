@@ -19,7 +19,7 @@ kvarray_t * readKVs(const char * fname) {
   int i=0,len;
   while((len=getline(&line,&size,f))>=0)
     {
-      if(line=='\n')
+      if(line[0]=='\n')
 	continue;
       temp->arr=realloc(temp->arr,(i+1)*sizeof(kvpair_t*));
       temp->len=i+1;

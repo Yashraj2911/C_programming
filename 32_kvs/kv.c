@@ -40,12 +40,12 @@ kvarray_t * readKVs(const char * fname) {
 	temp->arr[i]->key[k]=line[k];
       temp->arr[i]->key[k]=0;
       int t=0;
-      for(int v=j+1;v<len-1;v++)
+      for(int v=j+1;v<len;v++)
 	{
 	  if(line[v]!='\n')
 	    temp->arr[i]->value[t++]=line[v];
 	}
-      temp->arr[i]->value[t++]=0;
+      temp->arr[i]->value[t]=0;
       free(line);
       line=NULL;
       i++;

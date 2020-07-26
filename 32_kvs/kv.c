@@ -14,6 +14,7 @@ kvarray_t * readKVs(const char * fname) {
     }
   kvarray_t* temp=malloc(sizeof(kvarray_t));
   temp->arr=NULL;
+  temp->len=0;
   char* line=NULL;
   size_t size=0;
   int i=0,len;
@@ -26,7 +27,7 @@ kvarray_t * readKVs(const char * fname) {
 	  size=0;
 	  continue;
 	}
-      int j=1;
+      int j=0;
       while(j<len&&line[j]!='=')
 	j++;
       if(j==len||!j)

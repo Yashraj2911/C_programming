@@ -6,16 +6,42 @@
 #include "outname.h"
 
 counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
-  //WRITE ME
-  return NULL;
+  counts_t* c=createCounts();
+  FILE* f=fopen(filename,"r");
+  char str[30];
+  while(fgets(str,30,f))
+    {
+      addCount(c,lookupValue(kvPairs,str));
+    }
+  return c;
 }
 
 int main(int argc, char ** argv) {
   //WRITE ME (plus add appropriate error checking!)
- //read the key/value pairs from the file named by argv[1] (call the result kv)
-
- //count from 2 to argc (call the number you count i)
-
+  kvarray_t* kv=readKVs(argv[1]); //read the key/value pairs from the file named by argv[1] (call the result kv)
+  if(!kv)
+    {
+      fprintf(stderr,"\nFile not found..");
+      return EXIT_FAILURE;
+    }
+  for(int i=2;i<argc;i++) //count from 2 to argc (call the number you count i)
+    {
+      counts_t* c=countFile(argv[i],kv);
+      char* outName=malloc((strlen(argv[i])+7)*sizeof(*outName));
+      strcpy(outName,argv[i]);
+      char add[8]=".counts";
+      strcat(outName,add);
+      FILE* f=fopen(outName,"w");
+      printCounts(c,f);
+      if(fclose(f))
+	{
+	  fprintf(stderr,"\nCould not close file...");
+	  return EXIT_FAILURE;
+	}
+      free(outName);
+      freeKVs(kv);
+      freeCounts(c);
+    }
     //count the values that appear in the file named by argv[i], using kv as the key/value pair
     //   (call this result c)
 

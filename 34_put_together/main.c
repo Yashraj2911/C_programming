@@ -15,6 +15,11 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
 	str[strlen(str)-1]=0;
       addCount(c,lookupValue(kvPairs,str));
     }
+  if(fclose(f))
+    {
+      fprintf(stderr,"\nCould  not close file");
+      exit(EXIT_FAILURE);
+    }
   return c;
 }
 
@@ -48,7 +53,6 @@ int main(int argc, char ** argv) {
       freeCounts(c);
     }
   freeKVs(kv);
-  // free(kv);
     //count the values that appear in the file named by argv[i], using kv as the key/value pair
     //   (call this result c)
 

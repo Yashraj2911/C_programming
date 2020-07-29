@@ -24,6 +24,7 @@ int main(int argc, char ** argv) {
   if(!kv)
     {
       fprintf(stderr,"\nFile not found..");
+      freeKVs(kv);
       return EXIT_FAILURE;
     }
   for(int i=2;i<argc;i++) //count from 2 to argc (call the number you count i)
@@ -38,6 +39,9 @@ int main(int argc, char ** argv) {
       if(fclose(f))
 	{
 	  fprintf(stderr,"\nCould not close file...");
+	  free(outName);
+	  freeCounts(c);
+	  freeKVs(kv);
 	  return EXIT_FAILURE;
 	}
       free(outName);

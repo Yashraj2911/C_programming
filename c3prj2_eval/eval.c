@@ -265,7 +265,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //use of get_match_counts.
 unsigned * get_match_counts(deck_t * hand)
 {
-  unisgned* arr_count=calloc(hand->n_cards,sizeof(int));
+  unsigned* arr_count=calloc(hand->n_cards,sizeof(int));
   arr_count[0]=1;
   int since=0;
   for(int i=1;i<hand->n_cards;i++)

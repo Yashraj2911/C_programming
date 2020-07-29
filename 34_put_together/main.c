@@ -44,9 +44,9 @@ int main(int argc, char ** argv) {
       if(fclose(f))
 	{
 	  fprintf(stderr,"\nCould not close file...");
-	  free(outName);
-	  freeCounts(c);
-	  freeKVs(kv);
+	  //	  free(outName);
+	  //freeCounts(c);
+	  //freeKVs(kv);
 	  return EXIT_FAILURE;
 	}
       free(outName);

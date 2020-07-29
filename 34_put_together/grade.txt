@@ -1,4 +1,4 @@
-Grading at Tue Jul 28 14:57:46 UTC 2020
+Grading at Wed Jul 29 07:13:05 UTC 2020
 Attempting to compile:
 rm -f  outname.o  counts.o  main.o  kv.o count_values *~
 gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 outname.c
@@ -11,12 +11,100 @@ testcase1:
 valgrind reported memory errors
 #################################################
 testcase2:
-valgrind reported memory errors
+Your file matched the expected output
+Comparing file list1a.txt.counts with answer
+Your output is correct
+Comparing file list1b.txt.counts with answer
+Your file matched the expected output
+Your output is correct
+  - Valgrind showed memory leaks
+valgrind was not clean
+==282== Memcheck, a memory error detector
+==282== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==282== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==282== 
+==282== Parent PID: 281
+==282== 
+==282== 
+==282== HEAP SUMMARY:
+==282==     in use at exit: 1,104 bytes in 2 blocks
+==282==   total heap usage: 154 allocs, 152 frees, 28,989 bytes allocated
+==282== 
+==282== LEAK SUMMARY:
+==282==    definitely lost: 0 bytes in 0 blocks
+==282==    indirectly lost: 0 bytes in 0 blocks
+==282==      possibly lost: 0 bytes in 0 blocks
+==282==    still reachable: 1,104 bytes in 2 blocks
+==282==         suppressed: 0 bytes in 0 blocks
+==282== Reachable blocks (those to which a pointer was found) are not shown.
+==282== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==282== 
+==282== For counts of detected and suppressed errors, rerun with: -v
+==282== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 #################################################
 testcase3:
-valgrind reported memory errors
+Your file matched the expected output
+Comparing file list2a.txt.counts with answer
+Your output is correct
+Comparing file list2b.txt.counts with answer
+Your file matched the expected output
+Your output is correct
+Comparing file list2c.txt.counts with answer
+Your file matched the expected output
+Your output is correct
+  - Valgrind showed memory leaks
+valgrind was not clean
+==295== Memcheck, a memory error detector
+==295== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==295== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==295== 
+==295== Parent PID: 294
+==295== 
+==295== 
+==295== HEAP SUMMARY:
+==295==     in use at exit: 1,656 bytes in 3 blocks
+==295==   total heap usage: 121 allocs, 118 frees, 35,938 bytes allocated
+==295== 
+==295== LEAK SUMMARY:
+==295==    definitely lost: 0 bytes in 0 blocks
+==295==    indirectly lost: 0 bytes in 0 blocks
+==295==      possibly lost: 0 bytes in 0 blocks
+==295==    still reachable: 1,656 bytes in 3 blocks
+==295==         suppressed: 0 bytes in 0 blocks
+==295== Reachable blocks (those to which a pointer was found) are not shown.
+==295== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==295== 
+==295== For counts of detected and suppressed errors, rerun with: -v
+==295== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 #################################################
 testcase4:
-valgrind reported memory errors
+Line_5_did_not_match
+Your file did not match the expected ouput
+Comparing file list3a.txt.counts with answer
+Your output is correct
+  - Valgrind showed memory leaks
+valgrind was not clean
+==309== Memcheck, a memory error detector
+==309== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==309== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==309== 
+==309== Parent PID: 308
+==309== 
+==309== 
+==309== HEAP SUMMARY:
+==309==     in use at exit: 552 bytes in 1 blocks
+==309==   total heap usage: 69 allocs, 68 frees, 93,738 bytes allocated
+==309== 
+==309== LEAK SUMMARY:
+==309==    definitely lost: 0 bytes in 0 blocks
+==309==    indirectly lost: 0 bytes in 0 blocks
+==309==      possibly lost: 0 bytes in 0 blocks
+==309==    still reachable: 552 bytes in 1 blocks
+==309==         suppressed: 0 bytes in 0 blocks
+==309== Reachable blocks (those to which a pointer was found) are not shown.
+==309== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==309== 
+==309== For counts of detected and suppressed errors, rerun with: -v
+==309== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
-Overall Grade: F
+Overall Grade: C

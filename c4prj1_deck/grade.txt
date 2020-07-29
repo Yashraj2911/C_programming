@@ -1,10 +1,14 @@
-Grading at Wed Jul 29 15:08:54 UTC 2020
+Grading at Wed Jul 29 15:09:57 UTC 2020
 Compiling deck.c -> deck.o
-deck.c: In function ‘make_deck_exclude’:
-deck.c:61:37: error: ‘deck’ undeclared (first use in this function)
-    excl->cards=realloc(excl->cards,(deck->n_cards+1)*sizeof(*excl->cards));
-                                     ^
-deck.c:61:37: note: each undeclared identifier is reported only once for each function it appears in
-Compilation of deck.c failed
+Compiling eval.c -> eval.o
+eval.c: In function ‘get_match_counts’:
+eval.c:268:3: error: unknown type name ‘unisgned’
+   unisgned* arr_count=calloc(hand->n_cards,sizeof(int));
+   ^
+eval.c:285:10: error: pointer targets in return differ in signedness [-Werror=pointer-sign]
+   return arr_count;
+          ^
+cc1: all warnings being treated as errors
+Compilation of eval.c failed
 
 Overall Grade: F

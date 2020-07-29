@@ -58,7 +58,7 @@ deck_t* make_deck_exclude(deck_t* excluded_cards)
       card_t temp=card_from_num(i);
       if(!deck_contains(excluded_cards,temp))
 	{
-	  excl->cards=realloc(excl->cards,(deck->n_cards+1)*sizeof(*excl->cards));
+	  excl->cards=realloc(excl->cards,(excl->n_cards+1)*sizeof(*excl->cards));
 	  excl->cards[excl->n_cards]=malloc(sizeof(card_t));
 	  excl->cards[excl->n_cards]->value=temp.value;
 	  excl->cards[excl->n_cards]->suit=temp.suit;

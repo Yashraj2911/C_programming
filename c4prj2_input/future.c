@@ -1,5 +1,4 @@
 #include "future.h"
-#include <deck.h>
 #include <cards.h>
 #include "input.h"
 #include <stdlib.h>

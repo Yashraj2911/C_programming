@@ -34,7 +34,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	    {
 	      char first=*line;
 	      line_ind++;
-	      add_card_to(answer[i],card_from_letters(first,*line_ind);
+	      add_card_to(answer[i],card_from_letters(first,*line_ind));
 	    }
 	  count++;
 	}

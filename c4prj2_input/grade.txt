@@ -1,9 +1,9 @@
-Grading at Fri Jul 31 10:30:21 UTC 2020
+Grading at Fri Jul 31 10:31:51 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-future.c:2:18: fatal error: deck.h: No such file or directory
+future.c:2:19: fatal error: cards.h: No such file or directory
 compilation terminated.
 Compilation of future.c failed
 

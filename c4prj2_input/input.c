@@ -28,16 +28,20 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	    line++;
 	  if(*line_ind=='?')
 	    {
-	      add_future_card(fc,*(++line_ind)-48,add_empty_card(answer[i]););
+	      add_future_card(fc,*(++line_ind)-48,add_empty_card(answer[i]));
 	    }
 	  else
-	    add_card_to(answer[i],card_from_letters(*line_ind,*(++line_ind)));
+	    {
+	      char first=*line;
+	      line_ind++;
+	      add_card_to(answer[i],card_from_letters(first,*line_ind);
+	    }
 	  count++;
 	}
       if(count<5)
 	{
 	  fprintf(stderr,"\nInvalid input");
-	  exit(EXIT_FIALURE);
+	  exit(EXIT_FAILURE);
 	}
       i++;
       free(line);

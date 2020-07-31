@@ -25,7 +25,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
       while(line_ind)
 	{
 	  if(*line_ind==32)
-	    line++;
+	    line_ind++;
 	  if(*line_ind=='?')
 	    {
 	      add_future_card(fc,*(++line_ind)-48,add_empty_card(answer[i]));

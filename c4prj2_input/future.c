@@ -1,4 +1,10 @@
 #include "future.h"
+#include <deck.h>
+#include <cards.h>
+#include "input.h"
+#include <stdlib.h>
+ #include <stdio.h>
+ 
 void add_future_card(future_cards_t* fc,size_t index,card_t* ptr)
 {
   if(index>=fc->n_decks)

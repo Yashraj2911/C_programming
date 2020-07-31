@@ -1,14 +1,50 @@
-Grading at Fri Jul 31 10:27:58 UTC 2020
+Grading at Fri Jul 31 10:28:30 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c: In function ‘read_input’:
-input.c:37:64: error: expected ‘)’ before ‘;’ token
-        add_card_to(answer[i],card_from_letters(first,*line_ind);
-                                                                ^
-input.c:38:6: error: expected ‘;’ before ‘}’ token
-      }
-      ^
-Compilation of input.c failed
+Compiling future.c -> future.o
+future.c: In function ‘add_future_card’:
+future.c:7:23: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+       fc->decks[index]->n_cards=0;
+                       ^
+future.c:8:23: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+       fc->decks[index]->cards[fc->n_cards++]=ptr;
+                       ^
+future.c:8:33: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘n_cards’
+       fc->decks[index]->cards[fc->n_cards++]=ptr;
+                                 ^
+future.c:13:23: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+       fc->decks[index]->cards[fc->decks[index]->n_cards-1]=ptr;
+                       ^
+future.c:13:47: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+       fc->decks[index]->cards[fc->decks[index]->n_cards-1]=ptr;
+                                               ^
+future.c:14:23: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+       fc->decks[index]->n_cards++;
+                       ^
+future.c: In function ‘future_cards_from_deck’:
+future.c:21:7: error: implicit declaration of function ‘fprintf’ [-Werror=implicit-function-declaration]
+       fprintf(stderr,"\nNot enough cards")
+       ^
+future.c:21:7: error: incompatible implicit declaration of built-in function ‘fprintf’ [-Werror]
+future.c:21:7: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+future.c:21:15: error: ‘stderr’ undeclared (first use in this function)
+       fprintf(stderr,"\nNot enough cards")
+               ^
+future.c:21:15: note: each undeclared identifier is reported only once for each function it appears in
+future.c:22:2: error: expected ‘;’ before ‘return’
+  return;
+  ^
+future.c:26:33: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+       for(int j=0;j<fc->decks[i]->n_cards;j++)
+                                 ^
+future.c:28:16: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+    fc->decks[i]->cards[j]->value=deck->cards[i]->value;
+                ^
+future.c:29:16: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+    fc->decks[i]->cards[j]->suit=deck->cards[i]->suit;
+                ^
+cc1: all warnings being treated as errors
+Compilation of future.c failed
 
 Overall Grade: F

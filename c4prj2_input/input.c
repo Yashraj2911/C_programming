@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "deck.h"
+#include "cards.h"
+#include "future.h"
 deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 {
   deck_t** answer=NULL;

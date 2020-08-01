@@ -36,13 +36,13 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	      char first=*line;
 	      if(!isalpha(first))
 		{
-		  fprintf(stderr,"\nInvalid input");
+		  fprintf(stderr,"\nInvalid input 1");
 		  exit(EXIT_FAILURE);
 		}
 	      line_ind++;
 	      if(!isdigit(*line_ind))
 		{
-		  fprintf(stderr,"\nInvalid input");
+		  fprintf(stderr,"\nInvalid input 2");
 		  exit(EXIT_FAILURE);
 		}
 	      add_card_to(answer[i],card_from_letters(first,*line_ind));
@@ -51,7 +51,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	}
       if(count<5)
 	{
-	  fprintf(stderr,"\nInvalid input");
+	  fprintf(stderr,"\nInvalid input 3");
 	  exit(EXIT_FAILURE);
 	}
       i++;

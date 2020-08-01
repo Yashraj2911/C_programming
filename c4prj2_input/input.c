@@ -26,8 +26,11 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
       while(line_ind)
 	{
 	  if(*line_ind==32)
-	    line_ind++;
-	  if(*line_ind=='?')
+	    {
+	      line_ind++;
+	      continue;
+	    }
+	  if(*line_ind=='?'&&isdigit(*(line_ind+1)))
 	    {
 	      add_future_card(fc,*(++line_ind)-48,add_empty_card(answer[i]));
 	    }

@@ -3,6 +3,7 @@
 #include "deck.h"
 #include "cards.h"
 #include "future.h"
+#include <ctype.h>
 deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 {
   deck_t** answer=NULL;
@@ -33,7 +34,17 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	  else
 	    {
 	      char first=*line;
+	      if(!isalpha(first))
+		{
+		  fprintf(stderr,"\nInvalid input");
+		  exit(EXIT_FAILURE);
+		}
 	      line_ind++;
+	      if(!isdigit(*line_ind))
+		{
+		  fprintf(stderr,"\nInvalid input");
+		  exit(EXIT_FAILURE);
+		}
 	      add_card_to(answer[i],card_from_letters(first,*line_ind));
 	    }
 	  count++;

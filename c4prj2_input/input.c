@@ -37,7 +37,8 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	  else
 	    {
 	      char first=*line_ind;
-	      if(!isdigit(first-48)&&(first!='K'&&first!='A'&&first!='Q'&&first!='J'))
+	      printf("%c\n",first);
+	      if(!isdigit(first)&&(first!='K'&&first!='A'&&first!='Q'&&first!='J'))
 		{
 		  fprintf(stderr,"\nInvalid input 1");
 		  exit(EXIT_FAILURE);

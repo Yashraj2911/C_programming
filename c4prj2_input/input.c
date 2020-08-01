@@ -23,7 +23,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
       answer[i]->n_cards=0;
       char* line_ind=line;
       int count=0;
-      while(line_ind)
+      while(*line_ind)
 	{
 	  if(*line_ind==32)
 	    {

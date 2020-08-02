@@ -26,41 +26,47 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
       answer[i]=malloc(sizeof(deck_t));
       answer[i]->cards=NULL;
       answer[i]->n_cards=0;
-      char* line_ind=line;
+      int line_ind=0;;
       int count=0;
-      while(*line_ind)
+      while(line[line_ind])
 	{
-	  if(*line_ind==32)
+	  if(line[line_ind]==32)
 	    {
 	      line_ind++;
 	      continue;
 	    }
-	  if(*line_ind=='?'&&isdigit(*(line_ind+1)))
+	  if(line[line_ind]=='?'&&isdigit(line[line_ind+1]))
 	    {
 	      line_ind++;
 	      size_t index;
-	      index=strtoul(line_ind,&line_ind,10);
+	      char num[2];
+	      for(int i=0;line[line_ind];line_ind++)
+		if(isdigit(line[line_ind]))
+		  num[i++]=line[line_ind];
+	      line_ind--;
+	      index=strtoul(num,NULL,10);
 	      add_future_card(fc,index,add_empty_card(answer[i]));
 	    }
 	  else
 	    {
-	      char first=*line_ind;
+	      char first=line[line_ind];
 	      //	      printf("%d\n",first);
-	      if(isdigit(first)&&((first!='K'||first!='k')&&(first!='A'||first!='a')&&(first!='Q'||first!='q')&&(first!='J'||first!='j')))
+	      if(!isdigit(first)&&(first!='K'&&first!='A'&&first!='Q'&&first!='J'))
 		{
 		  fprintf(stderr,"\nInvalid input 4");
 		  exit(EXIT_FAILURE);
 		}
 	      line_ind++;
-	      if(*line_ind==32)
-		line_ind++;
-	       if(isalpha(*line_ind))
+	      // if(line[line_ind]==32)
+	      //	line_ind++;
+	      if(line[line_ind]!='s'&&line[line_ind]!='h'&&line[line_ind]!='c'&&line[line_ind]!='d')
 		{
 		  fprintf(stderr,"\nInvalid input 2");
 		  exit(EXIT_FAILURE);
 		  }
-	      add_card_to(answer[i],card_from_letters(first,*line_ind));
+	      add_card_to(answer[i],card_from_letters(first,line[line_ind]));
 	    }
+	  line_ind++;
 	  count++;
 	}
       if(count<5)

@@ -46,17 +46,17 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	    {
 	      char first=*line_ind;
 	      //	      printf("%d\n",first);
-	      /* if(!isdigit(first)&&(first!='K'&&first!='A'&&first!='Q'&&first!='J'))
+	      if(!isdigit(first)&&((first!='K'||first!='k')&&(first!='A'||first!='a')&&(first!='Q'||first!='q')&&(first!='J'||first!='j')))
 		{
 		  fprintf(stderr,"\nInvalid input 4");
 		  exit(EXIT_FAILURE);
-		  }*/
+		}
 	      line_ind++;
-	      /* if(!isalpha(*line_ind))
+	       if(!isalpha(*line_ind))
 		{
 		  fprintf(stderr,"\nInvalid input 2");
 		  exit(EXIT_FAILURE);
-		  }*/
+		  }
 	      add_card_to(answer[i],card_from_letters(first,*line_ind));
 	    }
 	  count++;

@@ -1,16 +1,416 @@
-Grading at Sun Aug  2 12:26:09 UTC 2020
+Grading at Sun Aug  2 12:27:51 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-future.c: In function ‘add_future_card’:
-future.c:19:14: error: incompatible types when assigning to type ‘deck_t {aka struct deck_tag}’ from type ‘void *’
-  fc->decks[i]=NULL;
-              ^
-future.c: In function ‘future_cards_from_deck’:
-future.c:45:10: error: wrong type argument to unary exclamation mark
-       if(!fc->decks[i])
-          ^
-Compilation of future.c failed
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Valgrind reported errors:
+==276== Memcheck, a memory error detector
+==276== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==276== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==276== Command: ./tester hands.txt draw.txt
+==276== Parent PID: 275
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x401851: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401E72: main (test-input.c:84)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x401856: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401E72: main (test-input.c:84)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x40185A: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401E72: main (test-input.c:84)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x401861: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401E72: main (test-input.c:84)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x401866: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401E72: main (test-input.c:84)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==276==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==276==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==276==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==276==    by 0x4E7369E: qsort_r (msort.c:297)
+==276==    by 0x401C76: my_sort_deck (test-input.c:53)
+==276==    by 0x401E90: main (test-input.c:85)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==276==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==276==    by 0x4E7369E: qsort_r (msort.c:297)
+==276==    by 0x401C76: my_sort_deck (test-input.c:53)
+==276==    by 0x401E90: main (test-input.c:85)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x401851: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401EBD: main (test-input.c:87)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x401856: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401EBD: main (test-input.c:87)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x40185A: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401EBD: main (test-input.c:87)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x401861: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401EBD: main (test-input.c:87)
+==276== 
+==276== Conditional jump or move depends on uninitialised value(s)
+==276==    at 0x401866: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==276==    by 0x401EBD: main (test-input.c:87)
+==276== 
+==276== 
+==276== HEAP SUMMARY:
+==276==     in use at exit: 0 bytes in 0 blocks
+==276==   total heap usage: 42 allocs, 42 frees, 14,768 bytes allocated
+==276== 
+==276== All heap blocks were freed -- no leaks are possible
+==276== 
+==276== For counts of detected and suppressed errors, rerun with: -v
+==276== Use --track-origins=yes to see where uninitialised values come from
+==276== ERROR SUMMARY: 47 errors from 12 contexts (suppressed: 0 from 0)
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Valgrind reported errors:
+==281== Memcheck, a memory error detector
+==281== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==281== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==281== Command: ./tester hands.txt draw.txt
+==281== Parent PID: 280
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x401851: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401E72: main (test-input.c:84)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x401856: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401E72: main (test-input.c:84)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x40185A: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401E72: main (test-input.c:84)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x401861: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401E72: main (test-input.c:84)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x401866: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401E72: main (test-input.c:84)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==281==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==281==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==281==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==281==    by 0x4E7369E: qsort_r (msort.c:297)
+==281==    by 0x401C76: my_sort_deck (test-input.c:53)
+==281==    by 0x401E90: main (test-input.c:85)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==281==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==281==    by 0x4E7369E: qsort_r (msort.c:297)
+==281==    by 0x401C76: my_sort_deck (test-input.c:53)
+==281==    by 0x401E90: main (test-input.c:85)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x401851: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401EBD: main (test-input.c:87)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x401856: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401EBD: main (test-input.c:87)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x40185A: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401EBD: main (test-input.c:87)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x401861: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401EBD: main (test-input.c:87)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x401866: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==281==    by 0x401EBD: main (test-input.c:87)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==281==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==281==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==281==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==281==    by 0x4E7369E: qsort_r (msort.c:297)
+==281==    by 0x401C76: my_sort_deck (test-input.c:53)
+==281==    by 0x401E90: main (test-input.c:85)
+==281== 
+==281== Conditional jump or move depends on uninitialised value(s)
+==281==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==281==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==281==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==281==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==281==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==281==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==281==    by 0x4E7369E: qsort_r (msort.c:297)
+==281==    by 0x401C76: my_sort_deck (test-input.c:53)
+==281==    by 0x401E90: main (test-input.c:85)
+==281== 
+==281== 
+==281== HEAP SUMMARY:
+==281==     in use at exit: 0 bytes in 0 blocks
+==281==   total heap usage: 135 allocs, 135 frees, 18,104 bytes allocated
+==281== 
+==281== All heap blocks were freed -- no leaks are possible
+==281== 
+==281== For counts of detected and suppressed errors, rerun with: -v
+==281== Use --track-origins=yes to see where uninitialised values come from
+==281== ERROR SUMMARY: 178 errors from 14 contexts (suppressed: 0 from 0)
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Valgrind reported errors:
+==287== Memcheck, a memory error detector
+==287== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==287== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==287== Command: ./tester h.txt d.txt
+==287== Parent PID: 286
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x401851: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401E72: main (test-input.c:84)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x401856: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401E72: main (test-input.c:84)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x40185A: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401E72: main (test-input.c:84)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x401861: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401E72: main (test-input.c:84)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x401866: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401E72: main (test-input.c:84)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==287==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==287==    by 0x4E7369E: qsort_r (msort.c:297)
+==287==    by 0x401C76: my_sort_deck (test-input.c:53)
+==287==    by 0x401E90: main (test-input.c:85)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x401851: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401EBD: main (test-input.c:87)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x401856: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401EBD: main (test-input.c:87)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x40185A: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401EBD: main (test-input.c:87)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x401861: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401EBD: main (test-input.c:87)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x401866: suit_letter (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x4018A5: print_card (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401137: print_hand (in /graderhome/work/c4prj2_input/tester)
+==287==    by 0x401EBD: main (test-input.c:87)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==287==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==287==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==287==    by 0x4E7369E: qsort_r (msort.c:297)
+==287==    by 0x401C76: my_sort_deck (test-input.c:53)
+==287==    by 0x401E90: main (test-input.c:85)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==287==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==287==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==287==    by 0x4E7369E: qsort_r (msort.c:297)
+==287==    by 0x401C76: my_sort_deck (test-input.c:53)
+==287==    by 0x401E90: main (test-input.c:85)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==287==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==287==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==287==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==287==    by 0x4E7369E: qsort_r (msort.c:297)
+==287==    by 0x401C76: my_sort_deck (test-input.c:53)
+==287==    by 0x401E90: main (test-input.c:85)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==287==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==287==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==287==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==287==    by 0x4E7369E: qsort_r (msort.c:297)
+==287==    by 0x401C76: my_sort_deck (test-input.c:53)
+==287==    by 0x401E90: main (test-input.c:85)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==287==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==287==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==287==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==287==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==287==    by 0x4E7369E: qsort_r (msort.c:297)
+==287==    by 0x401C76: my_sort_deck (test-input.c:53)
+==287==    by 0x401E90: main (test-input.c:85)
+==287== 
+==287== Conditional jump or move depends on uninitialised value(s)
+==287==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==287==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==287==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==287==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==287==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==287==    by 0x4E7369E: qsort_r (msort.c:297)
+==287==    by 0x401C76: my_sort_deck (test-input.c:53)
+==287==    by 0x401E90: main (test-input.c:85)
+==287== 
+==287== 
+==287== HEAP SUMMARY:
+==287==     in use at exit: 0 bytes in 0 blocks
+==287==   total heap usage: 171 allocs, 171 frees, 18,368 bytes allocated
+==287== 
+==287== All heap blocks were freed -- no leaks are possible
+==287== 
+==287== For counts of detected and suppressed errors, rerun with: -v
+==287== Use --track-origins=yes to see where uninitialised values come from
+==287== ERROR SUMMARY: 608 errors from 17 contexts (suppressed: 0 from 0)
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Valgrind reported errors:
+==293== Memcheck, a memory error detector
+==293== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==293== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==293== Command: ./tester i1 i2
+==293== Parent PID: 292
+==293== 
+==293== Use of uninitialised value of size 8
+==293==    at 0x401070: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
+==293==    by 0x401E31: main (test-input.c:81)
+==293== 
+==293== Invalid write of size 4
+==293==    at 0x401070: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
+==293==    by 0x401E31: main (test-input.c:81)
+==293==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==293== 
+==293== 
+==293== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==293==  Access not within mapped region at address 0x0
+==293==    at 0x401070: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
+==293==    by 0x401E31: main (test-input.c:81)
+==293==  If you believe this happened as a result of a stack
+==293==  overflow in your program's main thread (unlikely but
+==293==  possible), you can try to increase the size of the
+==293==  main thread stack using the --main-stacksize= flag.
+==293==  The main thread stack size used in this run was 8388608.
+==293== 
+==293== HEAP SUMMARY:
+==293==     in use at exit: 2,744 bytes in 166 blocks
+==293==   total heap usage: 332 allocs, 166 frees, 23,640 bytes allocated
+==293== 
+==293== LEAK SUMMARY:
+==293==    definitely lost: 0 bytes in 0 blocks
+==293==    indirectly lost: 0 bytes in 0 blocks
+==293==      possibly lost: 0 bytes in 0 blocks
+==293==    still reachable: 2,744 bytes in 166 blocks
+==293==         suppressed: 0 bytes in 0 blocks
+==293== Rerun with --leak-check=full to see details of leaked memory
+==293== 
+==293== For counts of detected and suppressed errors, rerun with: -v
+==293== Use --track-origins=yes to see where uninitialised values come from
+==293== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 
 Overall Grade: F

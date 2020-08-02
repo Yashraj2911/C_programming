@@ -46,14 +46,14 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	    {
 	      char first=*line_ind;
 	      //	      printf("%d\n",first);
-	      if(!isdigit(first)&&((first!='K'||first!='k')&&(first!='A'||first!='a')&&(first!='Q'||first!='q')&&(first!='J'||first!='j')))
+	      if(isdigit(first)&&((first!='K'||first!='k')&&(first!='A'||first!='a')&&(first!='Q'||first!='q')&&(first!='J'||first!='j')))
 		{
 		  fprintf(stderr,"\nInvalid input 4");
 		  exit(EXIT_FAILURE);
 		}
 	      line_ind++;
 	      if(*line_ind==32)
-		continue;
+		line_ind++;
 	       if(!isalpha(*line_ind))
 		{
 		  fprintf(stderr,"\nInvalid input 2");

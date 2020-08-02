@@ -40,7 +40,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	  else
 	    {
 	      char first=*line_ind;
-	      printf("%c\n",first);
+	      printf("%d\n",first);
 	      if(!isdigit(first)&&(first!='K'&&first!='A'&&first!='Q'&&first!='J'))
 		{
 		  fprintf(stderr,"\nInvalid input 1");

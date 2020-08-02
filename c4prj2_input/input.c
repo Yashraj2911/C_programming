@@ -6,6 +6,11 @@
 #include <ctype.h>
 deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 {
+  if(!f)
+    {
+      fprintf(stderr,"\nnvalid file");
+      exit(EXIT_FAILURE);
+    }
   deck_t** answer=NULL;
   size_t size;
   int len=0,i=0;

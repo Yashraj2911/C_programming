@@ -39,11 +39,11 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	    {
 	      line_ind++;
 	      size_t index;
-	      char num[3];int i;
-	      for(i=0;line[line_ind];line_ind++)
+	      char num[3];int j;
+	      for(j=0;line[line_ind];line_ind++)
 		if(isdigit(line[line_ind]))
-		  num[i++]=line[line_ind];
-	      num[i]=0;
+		  num[j++]=line[line_ind];
+	      num[j]=0;
 	      line_ind--;
 	      index=strtoul(num,NULL,10);
 	      add_future_card(fc,index,add_empty_card(answer[i]));

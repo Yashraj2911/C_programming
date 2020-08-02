@@ -54,7 +54,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	      line_ind++;
 	      if(*line_ind==32)
 		line_ind++;
-	       if(!isalpha(*line_ind))
+	       if(isalpha(*line_ind))
 		{
 		  fprintf(stderr,"\nInvalid input 2");
 		  exit(EXIT_FAILURE);

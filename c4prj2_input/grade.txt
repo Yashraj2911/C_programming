@@ -1,12 +1,28 @@
-Grading at Sun Aug  2 13:36:27 UTC 2020
+Grading at Sun Aug  2 13:36:53 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c: In function ‘read_input’:
-input.c:55:12: error: ‘lin_ind’ undeclared (first use in this function)
-        if(*lin_ind==32)
-            ^
-input.c:55:12: note: each undeclared identifier is reported only once for each function it appears in
-Compilation of input.c failed
+Compiling future.c -> future.o
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Your file did not match the expected ouput
+Test case failed
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Your file did not match the expected ouput
+Test case failed
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Your file did not match the expected ouput
+Test case failed
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Your file did not match the expected ouput
+Test case failed
 
 Overall Grade: F

@@ -32,7 +32,10 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	    }
 	  if(*line_ind=='?'&&isdigit(*(line_ind+1)))
 	    {
-	      add_future_card(fc,*(++line_ind)-48,add_empty_card(answer[i]));
+	      line_ind++;
+	      size_t index;
+	      index=strtoul(line_ind,&line_ind,10);
+	      add_future_card(fc,index,add_empty_card(answer[i]));
 	    }
 	  else
 	    {

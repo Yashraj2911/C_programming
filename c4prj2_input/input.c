@@ -52,7 +52,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 		  exit(EXIT_FAILURE);
 		}
 	      line_ind++;
-	      if(*lin_ind==32)
+	      if(*line_ind==32)
 		continue;
 	       if(!isalpha(*line_ind))
 		{

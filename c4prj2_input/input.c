@@ -30,7 +30,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
       int count=0;
       while(line[line_ind])
 	{
-	  if(line[line_ind]==32||line[line_ind]==10)
+	  if(line[line_ind]==32)
 	    {
 	      line_ind++;
 	      continue;
@@ -39,14 +39,14 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	    {
 	      line_ind++;
 	      size_t index;
-	      char num[5];int j;
+	      char num[5]={0};int j;
 	      for(j=0;line[line_ind];line_ind++)
 		if(isdigit(line[line_ind]))
 		  num[j++]=line[line_ind];
 		else
 		  break;
 	      num[j]=0;
-	      line_ind--;
+	      //line_ind--;
 	      index=strtoul(num,NULL,0);
 	      if(index>=0)
 	      add_future_card(fc,index,add_empty_card(answer[i]));

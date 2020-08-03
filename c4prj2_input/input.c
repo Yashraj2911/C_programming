@@ -48,20 +48,23 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	      num[j]=0;
 	      line_ind--;
 	      index=strtoul(num,NULL,10);
+	      if(index>=0)
 	      add_future_card(fc,index,add_empty_card(answer[i]));
+	      else
+		{
+		  fprintf(stderr,"\nInvalid index");
+		  exit(EXIT_FAILURE);
+		}
 	    }
 	  else
 	    {
 	      char first=line[line_ind];
-	      //	      printf("%d\n",first);
 	      if(!isdigit(first)&&(first!='K'&&first!='A'&&first!='Q'&&first!='J'))
 		{
-		  fprintf(stderr,"\nInvalid input 4");
+		  fprintf(stderr,"\nInvalid input 1");
 		  exit(EXIT_FAILURE);
 		}
 	      line_ind++;
-	      // if(line[line_ind]==32)
-	      //	line_ind++;
 	      if(line[line_ind]!='s'&&line[line_ind]!='h'&&line[line_ind]!='c'&&line[line_ind]!='d')
 		{
 		  fprintf(stderr,"\nInvalid input 2");

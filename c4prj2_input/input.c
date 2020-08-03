@@ -30,7 +30,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
       int count=0;
       while(line[line_ind])
 	{
-	  if(line[line_ind]==32)
+	  if(line[line_ind]==32||lin[line_ind]==10)
 	    {
 	      line_ind++;
 	      continue;

@@ -50,6 +50,11 @@ void future_cards_from_deck(deck_t* deck,future_cards_t* fc)
     {
       for(int j=0;j<fc->decks[i].n_cards;j++)
 	{
+	  if(!deck->cards)
+	    {
+	      fprintf(stderr,"\nInvalid deck");
+	      exit(EXIT_FAILURE);
+	    }
 	  fc->decks[i].cards[j]->value=deck->cards[i]->value;
 	  fc->decks[i].cards[j]->suit=deck->cards[i]->suit;
 	}

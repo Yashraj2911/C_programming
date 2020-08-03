@@ -72,7 +72,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 		  }
 	      add_card_to(answer[i],card_from_letters(first,line[line_ind]));
 	    }
-	  line_ind++;
+	  //	  line_ind++;
 	  count++;
 	}
       if(count<5)

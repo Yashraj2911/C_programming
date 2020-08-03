@@ -39,7 +39,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	    {
 	      line_ind++;
 	      size_t index;
-	      char num[3];int j;
+	      char num[5];int j;
 	      for(j=0;line[line_ind];line_ind++)
 		if(isdigit(line[line_ind]))
 		  num[j++]=line[line_ind];

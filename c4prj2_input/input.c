@@ -46,7 +46,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 		else
 		  break;
 	      num[j]=0;
-	      //line_ind--;
+	      line_ind--;
 	      index=strtoul(num,NULL,0);
 	      if(index>=0)
 	      add_future_card(fc,index,add_empty_card(answer[i]));
@@ -72,7 +72,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 		  }
 	      add_card_to(answer[i],card_from_letters(first,line[line_ind]));
 	    }
-	  //	  line_ind++;
+	  line_ind++;
 	  count++;
 	}
       if(count<5)

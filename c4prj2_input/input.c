@@ -43,6 +43,8 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	      for(j=0;line[line_ind];line_ind++)
 		if(isdigit(line[line_ind]))
 		  num[j++]=line[line_ind];
+		else
+		  break;
 	      num[j]=0;
 	      line_ind--;
 	      index=strtoul(num,NULL,10);

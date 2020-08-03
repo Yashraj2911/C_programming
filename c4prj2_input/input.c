@@ -72,7 +72,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	  line_ind++;
 	  count++;
 	}
-      if(count<6)
+      if(count<5)
 	{
 	  fprintf(stderr,"\nInvalid input 3");
 	  exit(EXIT_FAILURE);

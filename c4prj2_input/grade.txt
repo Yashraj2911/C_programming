@@ -1,15 +1,12 @@
-Grading at Mon Aug  3 09:32:11 UTC 2020
+Grading at Mon Aug  3 09:32:35 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
 future.c: In function ‘add_future_card’:
 future.c:20:16: error: incompatible types when assigning to type ‘deck_t {aka struct deck_tag}’ from type ‘void *’
-    fc->decks[i]=malloc(sizeof(deck_t))
+    fc->decks[i]=malloc(sizeof(deck_t));
                 ^
-future.c:21:4: error: expected ‘;’ before ‘fc’
-    fc->decks[i].cards=NULL;
-    ^
 Compilation of future.c failed
 
 Overall Grade: F

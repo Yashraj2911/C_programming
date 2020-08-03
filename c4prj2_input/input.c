@@ -47,7 +47,7 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 		  break;
 	      num[j]=0;
 	      line_ind--;
-	      index=strtoul(num,NULL,10);
+	      index=strtoul(num,NULL,0);
 	      if(index>=0)
 	      add_future_card(fc,index,add_empty_card(answer[i]));
 	      else

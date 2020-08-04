@@ -41,7 +41,7 @@ void future_cards_from_deck(deck_t* deck,future_cards_t* fc)
       fprintf(stderr,"\nInvalid fc");
       exit(EXIT_FAILURE);
     }
-  if(deck->n_cards!=fc->n_decks)
+  if(deck->n_cards<fc->n_decks)
     {
       fprintf(stderr,"\nNot enough cards");
 	return;

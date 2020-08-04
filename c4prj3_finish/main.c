@@ -69,11 +69,21 @@ int main(int argc, char ** argv) {
 	}
       for(size_t i=0;i<n_hands;i++)
 	{
-	  printf("Hand %zu won %u / %u times (%.2f%%)\n",i,win[i],num_trials,(float)(win[i]/n_hands*100));
+	  printf("Hand %zu won %u / %u times (%.2f%%)\n",i,win[i],num_trials,(float)((win[i]/num_trials)*100));
 	}
       printf("And there were %u ties\n",win[n_hands]);
     }
 
-
+  free_deck(fc->decks);
+  free(fc);
+  for(int i=0;i<n_hands;i++)
+    free_deck(input[i]);
+  free(input);
+  free_deck(rem_deck);
+  free(win);
+  if(fclose(f))
+    {
+      fprintf(stderr,"\nError in closing the file");
+    }
   return EXIT_SUCCESS;
 }

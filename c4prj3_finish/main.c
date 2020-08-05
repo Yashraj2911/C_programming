@@ -37,7 +37,7 @@ int main(int argc, char ** argv) {
   unsigned int num_trials;
   if(argc==3)
     {
-      num_trials=strtoul(argv[2],NULL,0);
+      num_trials=atoi(argv[2]);
     }
   else
     {
@@ -52,28 +52,32 @@ int main(int argc, char ** argv) {
       int index=0;
       for(int j=1;j<n_hands;j++)
 	{
-	  if((decide=compare_hands(highest,input[j]))==1)
+	  if((decide=compare_hands(highest,input[j]))==-1)
 	    {
 	      highest=input[j];
 	      index=j;
-	      win[index]++;
+	      // win[index]++;
 	    }
-	  else if(decide==-1)
+	  else if(decide==1)
 	    {
-	      win[index]++;
+	      // highest=input[j];
+	      //index=j;
+	      //win[index]++;
 	    }
 	  else
 	    {
-	      win[n_hands]++;
+	      //win[n_hands]++;
+	      index=n_hands;
 	    }
 	}
-      for(size_t i=0;i<n_hands;i++)
+      win[index]++;
+      highest=NULL;
+      for(size_t k=0;k<n_hands;k++)
 	{
-	  printf("Hand %zu won %u / %u times (%.2f%%)\n",i,win[i],num_trials,(float)((win[i]/num_trials)*100));
+	  printf("Hand %zu won %u / %u times (%.2f%%)\n",k,win[k],num_trials,(float)((float)win[k]*100/((float)num_trials)));
 	}
       printf("And there were %u ties\n",win[n_hands]);
     }
-
   free_deck(fc->decks);
   free(fc);
   for(int i=0;i<n_hands;i++)

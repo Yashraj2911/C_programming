@@ -76,7 +76,7 @@ deck_t* build_remaining_deck(deck_t** hands,size_t n_hands)
     {
       for(int j=0;j<hands[i]->n_cards;j++)
 	{
-	  if(hands[i]->cards[j]->value||hands[i]->cards[j]->suit)
+	  if(hands[i]->cards[j]->value)
 	    {
 	      add_card_to(excluded_deck,*hands[i]->cards[j]);
 	    }

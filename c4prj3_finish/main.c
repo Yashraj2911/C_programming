@@ -70,13 +70,15 @@ int main(int argc, char ** argv) {
 	}
       printf("And there were %u ties\n",win[n_hands]);
     }
-  for(int i=0;fc->n_decks;i++)
-    {
-      for(int j=0;j<fc->decks[i].n_cards;j++)
-	free(fc->decks[i].cards[j]);
-      free(fc->decks[i].cards);
-    }
-   free(fc);
+   for(int i=0;i<fc->n_decks;i++)
+   {
+     // for(int j=0;j<fc->decks[i].n_cards;j++)
+     //	free(fc->decks[i].cards[j]);
+     if(fc->decks[i].cards)
+       free(fc->decks[i].cards);
+   }
+  free(fc->decks);
+  free(fc);
   for(int i=0;i<n_hands;i++)
     free_deck(input[i]);
   free(input);

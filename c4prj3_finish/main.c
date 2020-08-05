@@ -56,17 +56,9 @@ int main(int argc, char ** argv) {
 	    {
 	      highest=input[j];
 	      index=j;
-	      // win[index]++;
 	    }
-	  else if(decide==1)
+	  else if(!decide)
 	    {
-	      // highest=input[j];
-	      //index=j;
-	      //win[index]++;
-	    }
-	  else
-	    {
-	      //win[n_hands]++;
 	      index=n_hands;
 	    }
 	}
@@ -78,8 +70,13 @@ int main(int argc, char ** argv) {
 	}
       printf("And there were %u ties\n",win[n_hands]);
     }
-  free_deck(fc->decks);
-  free(fc);
+  for(int i=0;fc->n_decks;i++)
+    {
+      for(int j=0;j<fc->decks[i].n_cards;j++)
+	free(fc->decks[i].cards[j]);
+      free(fc->decks[i].cards);
+    }
+   free(fc);
   for(int i=0;i<n_hands;i++)
     free_deck(input[i]);
   free(input);

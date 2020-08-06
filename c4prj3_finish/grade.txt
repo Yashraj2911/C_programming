@@ -1,4 +1,4 @@
-Grading at Thu Aug  6 13:21:46 UTC 2020
+Grading at Thu Aug  6 15:25:49 UTC 2020
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -14,24 +14,24 @@ Running a simulation with 20000 draws for 2 hands...
  ** Hand 0 differed from our answer by 34.60%
  ** Hand 1 differed from our answer by 64.65%
 You dont seem to have the right total draws.
-Yours sum to 19840 but I expected 20000
+Yours sum to 19850 but I expected 20000
 Running a simulation with 25000 draws for 3 hands...
  ** Hand 0 differed from our answer by 14.03%
  ** Hand 1 differed from our answer by 66.72%
  ** Hand 2 differed from our answer by 18.89%
 You dont seem to have the right total draws.
-Yours sum to 24902 but I expected 25000
+Yours sum to 24930 but I expected 25000
 Running a simulation with 25000 draws for 3 hands...
  ** Hand 0 differed from our answer by 45.06%
  ** Hand 1 differed from our answer by 15.98%
  ** Hand 2 differed from our answer by 38.64%
 You dont seem to have the right total draws.
-Yours sum to 24910 but I expected 25000
+Yours sum to 24920 but I expected 25000
 Running a simulation with 25000 draws for 2 hands...
  ** Hand 0 differed from our answer by 66.65%
  ** Hand 1 differed from our answer by 23.14%
 You dont seem to have the right total draws.
-Yours sum to 22458 but I expected 25000
+Yours sum to 22520 but I expected 25000
 Running a simulation with 80000 draws for 4 hands...
  ** Hand 0 differed from our answer by 18.12%
  ** Hand 1 differed from our answer by 54.58%
@@ -39,33 +39,28 @@ Running a simulation with 80000 draws for 4 hands...
  ** Hand 3 differed from our answer by 9.05%
 *** Test case failed ***
 Running a simulation with 30000 draws for 2 hands...
-Valgrind reported errors:
-==469== Memcheck, a memory error detector
-==469== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==469== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==469== Command: ./poker inp.txt 30000
-==469== Parent PID: 468
-==469== 
+ ** Hand 0 differed from our answer by 41.67%
+ ** Hand 1 differed from our answer by 58.33%
+*** Test case failed ***
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
  ** Hand 0 differed from our answer by 46.89%
  ** Hand 1 differed from our answer by 53.08%
-You dont seem to have the right total draws.
-Yours sum to 29992 but I expected 30000
+*** Test case failed ***
 Running a simulation with 40000 draws for 3 hands...
  ** Hand 0 differed from our answer by 13.11%
  ** Hand 1 differed from our answer by 40.19%
  ** Hand 2 differed from our answer by 46.70%
 You dont seem to have the right total draws.
-Yours sum to 39995 but I expected 40000
+Yours sum to 39990 but I expected 40000
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
 Valgrind reported errors:
-==597== Memcheck, a memory error detector
-==597== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==597== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==597== Command: ./poker whacky.txt 100000
-==597== Parent PID: 596
-==597== 
+==1361== Memcheck, a memory error detector
+==1361== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1361== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1361== Command: ./poker whacky.txt 100000
+==1361== Parent PID: 1360
+==1361== 
 
 Overall Grade: F

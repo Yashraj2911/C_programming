@@ -45,7 +45,8 @@ int main(int argc, char ** argv) {
     }
   for(unsigned int i=0;i<num_trials;i++)
     {
-      shuffle(rem_deck);
+      if(!(i%10))
+	shuffle(rem_deck);
       future_cards_from_deck(rem_deck,fc);
       int decide;
       deck_t *highest=input[0];

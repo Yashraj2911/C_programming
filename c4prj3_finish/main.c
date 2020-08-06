@@ -34,10 +34,10 @@ int main(int argc, char ** argv) {
   deck_t** input=read_input(f,&n_hands,fc);
   deck_t* rem_deck=build_remaining_deck(input,n_hands);
   unsigned int* win=calloc((n_hands+1),sizeof(*win));
-  unsigned int num_trials;
+  unsigned int num_trials=0;
   if(argc==3)
     {
-      num_trials=*(argv[2]);
+      num_trials=atoi(argv[2]);
     }
   else
     {
@@ -52,12 +52,13 @@ int main(int argc, char ** argv) {
       int index=0;
       for(int j=1;j<n_hands;j++)
 	{
-	  if((decide=compare_hands(highest,input[j]))==-1)
+	  decide=compare_hands(highest,input[j]);
+	  if(decide==-1)
 	    {
 	      highest=input[j];
 	      index=j;
 	    }
-	  else if(!decide)
+	  else if(decide==0)
 	    {
 	      index=n_hands;
 	    }

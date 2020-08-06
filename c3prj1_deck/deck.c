@@ -65,6 +65,8 @@ deck_t* make_deck_exclude(deck_t* excluded_cards)
 	  excl->n_cards++;
 	}
     }
+  free(excluded_cards->cards);
+  free(excluded_cards);
   return excl;
 }
 deck_t* build_remaining_deck(deck_t** hands,size_t n_hands)
@@ -78,7 +80,9 @@ deck_t* build_remaining_deck(deck_t** hands,size_t n_hands)
 	{
 	  if(hands[i]->cards[j]->value)
 	    {
-	      add_card_to(excluded_deck,*hands[i]->cards[j]);
+	      excluded_deck->cards=realloc(excluded_deck->cards,(excluded_deck->n_cards+1)*sizeof(card_t*));
+	      excluded_deck->cards[excluded_deck->n_cards]=hands[i]->cards[j];
+	      excluded_deck->n_cards++;
 	    }
 	}
     }

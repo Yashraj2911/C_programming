@@ -43,7 +43,7 @@ int main(int argc, char ** argv) {
     {
       num_trials=10000;
     }
-  for(int i=0;i<num_trials;i++)
+  for(unsigned int i=0;i<num_trials;i++)
     {
       shuffle(rem_deck);
       future_cards_from_deck(rem_deck,fc);

@@ -37,7 +37,7 @@ int main(int argc, char ** argv) {
   unsigned int num_trials;
   if(argc==3)
     {
-      num_trials=(unsigned)atoi(argv[2]);
+      num_trials=*(argv[2]);
     }
   else
     {

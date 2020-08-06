@@ -1,4 +1,4 @@
-Grading at Thu Aug  6 10:11:54 UTC 2020
+Grading at Thu Aug  6 13:21:46 UTC 2020
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -33,17 +33,19 @@ Running a simulation with 25000 draws for 2 hands...
 You dont seem to have the right total draws.
 Yours sum to 22458 but I expected 25000
 Running a simulation with 80000 draws for 4 hands...
-Valgrind reported errors:
-==404== Memcheck, a memory error detector
-==404== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==404== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==404== Command: ./poker inp3.txt 80000
-==404== Parent PID: 403
-==404== 
-Running a simulation with 30000 draws for 2 hands...
- ** Hand 0 differed from our answer by 41.67%
- ** Hand 1 differed from our answer by 58.33%
+ ** Hand 0 differed from our answer by 18.12%
+ ** Hand 1 differed from our answer by 54.58%
+ ** Hand 2 differed from our answer by 18.25%
+ ** Hand 3 differed from our answer by 9.05%
 *** Test case failed ***
+Running a simulation with 30000 draws for 2 hands...
+Valgrind reported errors:
+==469== Memcheck, a memory error detector
+==469== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==469== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==469== Command: ./poker inp.txt 30000
+==469== Parent PID: 468
+==469== 
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
  ** Hand 0 differed from our answer by 46.89%
@@ -59,11 +61,11 @@ Yours sum to 39995 but I expected 40000
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
 Valgrind reported errors:
-==584== Memcheck, a memory error detector
-==584== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==584== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==584== Command: ./poker whacky.txt 100000
-==584== Parent PID: 583
-==584== 
+==597== Memcheck, a memory error detector
+==597== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==597== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==597== Command: ./poker whacky.txt 100000
+==597== Parent PID: 596
+==597== 
 
 Overall Grade: F

@@ -81,7 +81,7 @@ card_t card_from_letters(char value_let, char suit_let) {
     case 'C':
     case 'c': temp.suit=CLUBS;
     }
-  //    assert_card_valid(temp);
+  assert_card_valid(temp);
   return temp;
 }
 card_t card_from_num(unsigned c) {

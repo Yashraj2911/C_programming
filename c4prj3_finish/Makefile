@@ -1,7 +1,7 @@
 FLAGS=-Wall -Werror -std=gnu99 -pedantic -ggdb3
 SRCS=$(wildcard *.c)
 OBJS=$(patsubst %.c, %.o, $(SRCS))
-PROGRAM=test
+PROGRAM=poker
 
 $(PROGRAM): $(OBJS)
 	gcc $(CFLAGS) -o $@ $(OBJS)
@@ -15,6 +15,10 @@ clean:
 cards.o: cards.h
 deck.o: deck.h
 eval.o: eval.h
-test.o: cards.o
-test.o: deck.o
-test.o: eval.o
+future.o:future.h
+input.o: input.h
+poker.o: cards.o
+poker.o: deck.o
+poker.o: eval.o
+poker.o: future.o
+poker.o: input.o

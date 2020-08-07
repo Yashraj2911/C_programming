@@ -54,7 +54,7 @@ int main(int argc, char ** argv) {
       for(int j=1;j<n_hands;j++)
 	{
 	  decide=compare_hands(highest,input[j]);
-	  if(decide==-1)
+	  if(decide<0)
 	    {
 	      highest=input[j];
 	      index=j;
@@ -68,7 +68,7 @@ int main(int argc, char ** argv) {
       highest=NULL;
       for(size_t k=0;k<n_hands;k++)
 	{
-	  printf("Hand %zu won %u / %u times (%.2f%%)\n",k,win[k],num_trials,(float)(win[k]*100/num_trials));
+	  printf("Hand %zu won %u / %u times (%.2f%%)\n",k,win[k],num_trials,(float)((float)(win[k]*100)/num_trials));
 	}
       printf("And there were %u ties\n",win[n_hands]);
     }

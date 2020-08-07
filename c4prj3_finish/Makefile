@@ -17,8 +17,10 @@ deck.o: deck.h
 eval.o: eval.h
 future.o:future.h
 input.o: input.h
+main.o: main.c
 poker.o: cards.o
 poker.o: deck.o
 poker.o: eval.o
 poker.o: future.o
 poker.o: input.o
+poker.o: main.o

@@ -61,7 +61,6 @@ int main(int argc, char ** argv) {
 	    }
 	  else if(decide==0)
 	    {
-	      highest=input[j];
 	      index=n_hands;
 	    }
 	}

@@ -81,8 +81,8 @@ deck_t** read_input(FILE* f,size_t* n_hands,future_cards_t* fc)
 	  exit(EXIT_FAILURE);
 	}
       i++;
-      free(line);
-      line=NULL;
+      //   free(line);
+      // line;
     }
   free(line);
   *n_hands=i;

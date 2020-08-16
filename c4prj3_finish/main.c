@@ -34,7 +34,7 @@ int main(int argc, char ** argv) {
   deck_t** input=read_input(f,&n_hands,fc);
   deck_t* rem_deck=build_remaining_deck(input,n_hands);
   unsigned int* win=calloc((n_hands+1),sizeof(*win));
-  unsigned int num_trials=0;
+  unsigned int num_trials;
   if(argc==3)
     {
       num_trials=atoi(argv[2]);

@@ -64,7 +64,6 @@ int main(int argc, char ** argv) {
 	    }
 	}
       win[index]++;
-      highest=NULL;
       for(int k=0;k<n_hands;k++)
 	{
 	  printf("Hand %d won %u / %u times (%.2f%%)\n",k,win[k],num_trials,(win[k]*100)/(double)num_trials);
@@ -75,7 +74,7 @@ int main(int argc, char ** argv) {
    {
      // for(int j=0;j<fc->decks[i].n_cards;j++)
      //	free(fc->decks[i].cards[j]);
-     if(fc->decks[i].cards)
+     //     if(fc->decks[i].cards)
        free(fc->decks[i].cards);
    }
   free(fc->decks);

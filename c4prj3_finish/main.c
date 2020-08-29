@@ -48,14 +48,15 @@ int main(int argc, char ** argv) {
 	shuffle(rem_deck);
       future_cards_from_deck(rem_deck,&fc);
       int decide;
-      deck_t *highest=input[0];
+      // deck_t *highest=input[0];
       int index=0;
+      int indexl=0;
       for(int j=1;j<n_hands;j++)
 	{
-	  decide=compare_hands(highest,input[j]);
+	  decide=compare_hands(input[indexl],input[j]);
 	  if(decide<0)
 	    {
-	      highest=input[j];
+	      indexl=j;
 	      index=j;
 	    }
 	  else if(decide==0)

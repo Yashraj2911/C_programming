@@ -59,6 +59,10 @@ int main(int argc, char ** argv) {
 	      indexl=j;
 	      index=j;
 	    }
+	  else if(decide>0)
+	    {
+	      index=indexl;
+	    }
 	  else if(decide==0)
 	    {
 	      index=n_hands;

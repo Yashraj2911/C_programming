@@ -63,7 +63,7 @@ int main(int argc, char ** argv) {
 	    {
 	      index=indexl;
 	    }
-	  else if(decide==0)
+	  else
 	    {
 	      index=n_hands;
 	    }

@@ -70,21 +70,19 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 	  int diff=hand->cards[i]->value-hand->cards[i+1]->value;
 	  if(diff>1)
 	    break;
-	  if(count==4)
-	    break;
 	  if(diff==1)
 	    count++;
+	  if(count==4)
+	    return 1;
 	}
-      if(count==4)
-	return 1;
 
       if(hand->cards[index]->value==VALUE_ACE)       //func for ace low straight
 	{
 	  count=0;
+	   if(hand->cards[index]->value-hand->cards[index+1]->value>1&&hand->cards[index+1]->value!=5)
+	     return 0;
 	  for(int i=index+1;i<hand->n_cards-1;i++)
 	    {
-	      if(hand->cards[index]->value-hand->cards[index+1]->value>1&&hand->cards[index+1]->value!=5)
-		break;
 	      if(hand->cards[i]->value==5)
 		count=1;
 	      int diff=hand->cards[i]->value-hand->cards[i+1]->value;
@@ -92,9 +90,9 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 		count++;
 	      if(diff>1&&!count)
 		break;
+	      if(count==4)
+		return -1;
 	    }
-	  if(count==4)
-	    return -1;
 	}
       return 0;
     }
@@ -122,16 +120,16 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 	      int diff_suit=suspect-hand->cards[i]->suit;
 	       if(diff>1)
 		break;
-	      if(count==4)
-		break;
 	      if(diff==1&&!diff_suit)
 		count++;
 	       if(hand->cards[i]->suit==suspect)
 		temp_value=hand->cards[i]->value;
+	      if(count==4)
+		return 1;		
 	    }
-	  if(count==4)
-	    return 1;
 	}
+      else
+	return 0;
       if(hand->cards[index]->value==VALUE_ACE)       //func for ace low straight flush
 	{
 	  count=0;

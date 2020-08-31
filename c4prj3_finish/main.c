@@ -33,7 +33,7 @@ int main(int argc, char ** argv) {
 
   deck_t** input=read_input(f,&n_hands,&fc);
   deck_t* rem_deck=build_remaining_deck(input,n_hands);
-  unsigned int* win=calloc((n_hands+1),sizeof(*win));
+  size_t* win=calloc((n_hands+1),sizeof(*win));
   unsigned int num_trials;
   if(argc==3)
     {
@@ -71,9 +71,9 @@ int main(int argc, char ** argv) {
       win[index]++;
       for(size_t k=0;k<n_hands;k++)
 	{
-	  printf("Hand %zu won %u / %u times (%.2f%%)\n",k,win[k],num_trials,(float)((win[k]*100)/(double)num_trials));
+	  printf("Hand %zu won %zu / %u times (%.2f%%)\n",k,win[k],num_trials,(float)((win[k]*100)/(double)num_trials));
 	}
-      printf("And there were %u ties\n",win[n_hands]);
+      printf("And there were %zu ties\n",win[n_hands]);
     }
    for(int i=0;i<fc.n_decks;i++)
    {

@@ -54,12 +54,12 @@ int main(int argc, char ** argv) {
       for(size_t j=1;j<n_hands;j++)
 	{
 	  decide=compare_hands(input[indexl],input[j]);
-	  if(decide>0)
+	  if(decide<0)
 	    {
 	      indexl=j;
 	      index=j;
 	    }
-	  else if(decide<0)
+	  else if(decide>0)
 	    {
 	      index=indexl;
 	    }
@@ -71,7 +71,7 @@ int main(int argc, char ** argv) {
       win[index]++;
       for(size_t k=0;k<n_hands;k++)
 	{
-	  printf("Hand %zu won %u / %u times (%.2f%%)\n",k,win[k],num_trials,(win[k]*100)/(double)num_trials);
+	  printf("Hand %zu won %u / %u times (%.2f%%)\n",k,win[k],num_trials,(float)((win[k]*100)/(double)num_trials));
 	}
       printf("And there were %u ties\n",win[n_hands]);
     }

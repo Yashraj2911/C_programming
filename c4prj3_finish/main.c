@@ -68,9 +68,11 @@ int main(int argc, char ** argv) {
     // find out which hand to score, by default its hand zero so if first wins, dont shift at all
     int inc_array_at=0;
     int index=0;
+    int decide;
     for( int x = 1; x<n_hands; x++){
-      if (compare_hands(input[index], input[x])==0) inc_array_at = n_hands;
-      if (compare_hands(input[index], input[x])<0) {
+      decide=compare_hands(input[index], input[x]);
+      if (decide==0) inc_array_at = n_hands;
+      if (decide<0) {
 	inc_array_at = x;
 	index=x;
       }

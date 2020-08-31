@@ -43,15 +43,15 @@ int main(int argc, char ** argv) {
     {
       num_trials=10000;
     }
-  for(unsigned int i=0;i<num_trials;i++)
+  for(size_t i=0;i<num_trials;i++)
     {
 	shuffle(rem_deck);
       future_cards_from_deck(rem_deck,&fc);
       int decide;
       // deck_t *highest=input[0];
-      int index=0;
-      int indexl=0;
-      for(int j=1;j<n_hands;j++)
+      size_t index=0;
+      size_t indexl=0;
+      for(size_t j=1;j<n_hands;j++)
 	{
 	  decide=compare_hands(input[indexl],input[j]);
 	  if(decide<0)
@@ -69,9 +69,9 @@ int main(int argc, char ** argv) {
 	    }
 	}
       win[index]++;
-      for(int k=0;k<n_hands;k++)
+      for(size_t k=0;k<n_hands;k++)
 	{
-	  printf("Hand %d won %u / %u times (%.2f%%)\n",k,win[k],num_trials,(win[k]*100)/(double)num_trials);
+	  printf("Hand %zu won %u / %u times (%.2f%%)\n",k,win[k],num_trials,(win[k]*100)/(double)num_trials);
 	}
       printf("And there were %u ties\n",win[n_hands]);
     }

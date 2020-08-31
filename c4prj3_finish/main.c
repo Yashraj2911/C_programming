@@ -54,12 +54,12 @@ int main(int argc, char ** argv) {
       for(size_t j=1;j<n_hands;j++)
 	{
 	  decide=compare_hands(input[indexl],input[j]);
-	  if(decide<0)
+	  if(decide>0)
 	    {
 	      indexl=j;
 	      index=j;
 	    }
-	  else if(decide>0)
+	  else if(decide<0)
 	    {
 	      index=indexl;
 	    }
